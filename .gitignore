@@ -1,4 +1,6 @@
 bin/
 obj/
 *.user
-experiments/
+experiments/*
+!experiments/*.csv
+!experiments/gw*-predictions.json
