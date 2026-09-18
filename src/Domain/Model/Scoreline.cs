@@ -6,6 +6,13 @@ public readonly record struct Scoreline(int HomeScore, int AwayScore)
     /// <summary>The wire key Jev uses to name this scoreline as a choice option.</summary>
     public string Key => $"{HomeScore}-{AwayScore}";
 
+    public Outcome Outcome => HomeScore.CompareTo(AwayScore) switch
+    {
+        > 0 => Outcome.HomeWin,
+        < 0 => Outcome.AwayWin,
+        _ => Outcome.Draw,
+    };
+
     public static bool TryParse(string? key, out Scoreline scoreline)
     {
         scoreline = default;
