@@ -160,7 +160,12 @@ curl http://localhost:5270/gameweeks/5
       "kickoffUtc": "2026-09-18T19:00:00+00:00",
       "homeTeam": "Brentford",
       "awayTeam": "Chelsea",
-      "mostLikelyScore": { "home": 1, "away": 2, "confidence": 0.23 },
+      "scorelines": [
+        { "home": 1, "away": 1, "confidence": 0.26 },
+        { "home": 0, "away": 0, "confidence": 0.19 },
+        { "home": 1, "away": 2, "confidence": 0.15 }
+      ],
+      "otherScorelines": 0.24,
       "outcome": {
         "result": "AwayWin",
         "homeWin": 0.24, "draw": 0.31, "awayWin": 0.45,
@@ -173,8 +178,14 @@ curl http://localhost:5270/gameweeks/5
 }
 ```
 
-`mostLikelyScore` and `outcome` are null if Jev returned neither for a fixture. A gameweek
-outside the season returns 404.
+`scorelines` is empty and `outcome` null if Jev returned neither. A gameweek outside the
+season returns 404.
+
+Candidate scorelines are reported most likely first, five by default — `?scorelines=10` for
+more. Reporting one would overstate what Jev said: the best of fifty options rarely holds
+more than a fifth of the probability, and `otherScorelines` is what the listed ones leave
+out. Showing the spread is the honest reading, and more use than a single number that is
+wrong four times in five.
 
 ## Tests
 

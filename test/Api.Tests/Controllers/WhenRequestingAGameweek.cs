@@ -36,7 +36,7 @@ public class WhenRequestingAGameweek
     }
 
     [Fact]
-    public async Task The_most_likely_score_is_reported_for_each_fixture()
+    public async Task The_likeliest_score_leads_the_list_for_each_fixture()
     {
         // Arrange
         var controller = GivenAGameweek.With("Everton", "Ipswich Town", 14, (2, 1, 0.31), (1, 1, 0.22)).Build();
@@ -45,7 +45,7 @@ public class WhenRequestingAGameweek
         var result = await controller.Get(5);
 
         // Assert
-        Assert.Equal(new ScoreResponse(2, 1, 0.31), Assert.Single(Ok(result).Fixtures).MostLikelyScore);
+        Assert.Equal(new ScoreResponse(2, 1, 0.31), Assert.Single(Ok(result).Fixtures).Scorelines[0]);
     }
 
     [Fact]
@@ -188,6 +188,69 @@ public class WhenRequestingAGameweek
     }
 
     [Fact]
+    public async Task Several_candidate_scorelines_are_reported_most_likely_first()
+    {
+        // Arrange
+        // An exact scoreline is never confident, so showing one number alone overstates it.
+        var controller = GivenAGameweek
+            .With("Everton", "Ipswich Town", 14, (2, 1, 0.25), (1, 1, 0.19), (2, 0, 0.15))
+            .Build();
+
+        // Act
+        var result = await controller.Get(5);
+
+        // Assert
+        Assert.Equal(
+            [(2, 1), (1, 1), (2, 0)],
+            Assert.Single(Ok(result).Fixtures).Scorelines.Select(s => (s.Home, s.Away)));
+    }
+
+    [Fact]
+    public async Task Only_the_number_of_scorelines_asked_for_are_reported()
+    {
+        // Arrange
+        var controller = GivenAGameweek
+            .With("Everton", "Ipswich Town", 14, (2, 1, 0.25), (1, 1, 0.19), (2, 0, 0.15))
+            .Build();
+
+        // Act
+        var result = await controller.Get(5, scorelines: 2);
+
+        // Assert
+        Assert.Equal(2, Assert.Single(Ok(result).Fixtures).Scorelines.Count);
+    }
+
+    [Fact]
+    public async Task The_probability_left_on_scorelines_not_shown_is_reported()
+    {
+        // Arrange
+        // What is left over is the point: it says how much the shown scorelines leave out.
+        var controller = GivenAGameweek
+            .With("Everton", "Ipswich Town", 14, (2, 1, 0.25), (1, 1, 0.19), (2, 0, 0.15))
+            .Build();
+
+        // Act
+        var result = await controller.Get(5, scorelines: 2);
+
+        // Assert
+        Assert.Equal(0.56, Assert.Single(Ok(result).Fixtures).OtherScorelines, 3);
+    }
+
+    [Fact]
+    public async Task A_fixture_whose_scorelines_are_all_shown_still_reports_what_is_left()
+    {
+        // Arrange
+        var controller = GivenAGameweek
+            .With("Everton", "Ipswich Town", 14, (2, 1, 0.25), (1, 1, 0.19)).Build();
+
+        // Act
+        var result = await controller.Get(5);
+
+        // Assert
+        Assert.Equal(0.56, Assert.Single(Ok(result).Fixtures).OtherScorelines, 3);
+    }
+
+    [Fact]
     public async Task A_gameweek_with_no_fixtures_is_not_found()
     {
         // Arrange
@@ -201,7 +264,7 @@ public class WhenRequestingAGameweek
     }
 
     [Fact]
-    public async Task A_fixture_Jev_could_not_call_is_reported_without_a_score()
+    public async Task A_fixture_Jev_could_not_call_is_reported_without_any_scoreline()
     {
         // Arrange
         var controller = GivenAGameweek.With("Everton", "Ipswich Town", 14).Build();
@@ -210,7 +273,7 @@ public class WhenRequestingAGameweek
         var result = await controller.Get(5);
 
         // Assert
-        Assert.Null(Assert.Single(Ok(result).Fixtures).MostLikelyScore);
+        Assert.Empty(Assert.Single(Ok(result).Fixtures).Scorelines);
     }
 
     [Fact]

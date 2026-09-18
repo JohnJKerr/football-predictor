@@ -11,7 +11,11 @@ public sealed record FixturePredictionResponse(
     DateTimeOffset KickoffUtc,
     string HomeTeam,
     string AwayTeam,
-    ScoreResponse? MostLikelyScore,
+    /// <summary>Candidate results, most likely first. An exact scoreline is never confident,
+    /// so a single one overstates what Jev actually said.</summary>
+    IReadOnlyList<ScoreResponse> Scorelines,
+    /// <summary>Probability left on results not listed, including scorelines beyond the grid.</summary>
+    double OtherScorelines,
     OutcomeResponse? Outcome,
     double OverTwoAndAHalfGoals,
     double BothTeamsToScore);

@@ -14,8 +14,11 @@ public sealed class GameweeksController(IGameweekPredictor predictor, IStateSett
     [HttpGet("{gameweek:int}")]
     [ProducesResponseType<GameweekResponse>(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    /// <param name="scorelines">How many candidate scorelines to report per fixture.</param>
     public async Task<ActionResult<GameweekResponse>> Get(
-        int gameweek, CancellationToken cancellationToken = default)
+        int gameweek,
+        [FromQuery] int scorelines = GameweekResponseMapper.DefaultScorelines,
+        CancellationToken cancellationToken = default)
     {
         var predictions = await predictor.PredictAsync(gameweek, cancellationToken);
 
@@ -29,6 +32,9 @@ public sealed class GameweeksController(IGameweekPredictor predictor, IStateSett
             });
         }
 
-        return Ok(predictions.ToResponse(gameweek, StateSettings.Describe(state ?? StateSettings.Default)));
+        return Ok(predictions.ToResponse(
+            gameweek,
+            Math.Max(1, scorelines),
+            StateSettings.Describe(state ?? StateSettings.Default)));
     }
 }
