@@ -7,8 +7,12 @@ using Domain.Predicting;
 internal sealed class GivenJev
 {
     private readonly Dictionary<Scoreline, double> scorelines = [];
+    private readonly Dictionary<Outcome, double> outcomes = [];
     private double other;
     private double confidence = 0.8;
+    private double outcomeConfidence;
+    private double overGoals;
+    private double bothToScore;
 
     public static GivenJev Returning(params (int Home, int Away, double Probability)[] scorelines)
     {
@@ -27,11 +31,27 @@ internal sealed class GivenJev
         return this;
     }
 
+    public GivenJev AndOutcome(double home, double draw, double away, double confidence)
+    {
+        outcomes[Outcome.HomeWin] = home;
+        outcomes[Outcome.Draw] = draw;
+        outcomes[Outcome.AwayWin] = away;
+        outcomeConfidence = confidence;
+        return this;
+    }
+
+    public GivenJev AndGoals(double overTwoAndAHalf, double bothTeamsToScore)
+    {
+        overGoals = overTwoAndAHalf;
+        bothToScore = bothTeamsToScore;
+        return this;
+    }
+
     public StubJevPredictor Build() => new(new MatchForecast(
         new ScorelineProbabilities(scorelines, other, confidence),
-        new OutcomeProbabilities(new Dictionary<Outcome, double>(), 0d),
-        OverTwoAndAHalfGoals: 0d,
-        BothTeamsToScore: 0d));
+        new OutcomeProbabilities(outcomes, outcomeConfidence),
+        overGoals,
+        bothToScore));
 }
 
 internal sealed class StubJevPredictor(MatchForecast forecast) : IJevPredictor

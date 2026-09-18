@@ -13,10 +13,10 @@ public class WhenPredictingAMatch
         var jev = GivenJev.Returning((1, 0, 0.20), (2, 1, 0.35), (0, 0, 0.45)).Build();
 
         // Act
-        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+        var prediction = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
         // Assert
-        Assert.Equal([(0, 0), (2, 1), (1, 0)], predictions.Select(p => (p.HomeScore, p.AwayScore)));
+        Assert.Equal([(0, 0), (2, 1), (1, 0)], prediction.Scorelines.Select(p => (p.HomeScore, p.AwayScore)));
     }
 
     [Fact]
@@ -26,10 +26,10 @@ public class WhenPredictingAMatch
         var jev = GivenJev.Returning((2, 1, 0.35), (1, 0, 0.20)).Build();
 
         // Act
-        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+        var prediction = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
         // Assert
-        Assert.Equal(new Prediction(2, 1, 0.35), predictions[0]);
+        Assert.Equal(new Prediction(2, 1, 0.35), prediction.Scorelines[0]);
     }
 
     [Fact]
@@ -39,10 +39,10 @@ public class WhenPredictingAMatch
         var jev = GivenJev.Returning((1, 0, 0.60), (4, 4, 0.0), (2, 1, 0.40)).Build();
 
         // Act
-        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+        var prediction = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
         // Assert
-        Assert.DoesNotContain(predictions, p => p is { HomeScore: 4, AwayScore: 4 });
+        Assert.DoesNotContain(prediction.Scorelines, p => p is { HomeScore: 4, AwayScore: 4 });
     }
 
     [Fact]
@@ -52,10 +52,10 @@ public class WhenPredictingAMatch
         var jev = GivenJev.Returning((1, 0, 0.60), (4, 4, 0.0), (2, 1, 0.40)).Build();
 
         // Act
-        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+        var prediction = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
         // Assert
-        Assert.Equal(2, predictions.Count);
+        Assert.Equal(2, prediction.Scorelines.Count);
     }
 
     [Fact]
@@ -66,10 +66,64 @@ public class WhenPredictingAMatch
         var jev = GivenJev.Returning((1, 0, 0.30)).AndInTheCatchAll(0.70).Build();
 
         // Act
-        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+        var prediction = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
         // Assert
-        Assert.Equal([new Prediction(1, 0, 0.30)], predictions);
+        Assert.Equal([new Prediction(1, 0, 0.30)], prediction.Scorelines);
+    }
+
+    [Fact]
+    public async Task The_outcome_Jev_weighed_up_is_passed_through()
+    {
+        // Arrange
+        var jev = GivenJev.Returning((1, 0, 0.3))
+            .AndOutcome(home: 0.24, draw: 0.31, away: 0.45, confidence: 0.58).Build();
+
+        // Act
+        var prediction = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal(Outcome.AwayWin, prediction.Outcome.MostLikely);
+    }
+
+    [Fact]
+    public async Task Jevs_confidence_in_the_outcome_is_passed_through()
+    {
+        // Arrange
+        var jev = GivenJev.Returning((1, 0, 0.3))
+            .AndOutcome(home: 0.24, draw: 0.31, away: 0.45, confidence: 0.58).Build();
+
+        // Act
+        var prediction = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal(0.58, prediction.Outcome.Confidence);
+    }
+
+    [Fact]
+    public async Task The_chance_of_three_or_more_goals_is_passed_through()
+    {
+        // Arrange
+        var jev = GivenJev.Returning((1, 0, 0.3)).AndGoals(0.62, 0.71).Build();
+
+        // Act
+        var prediction = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal(0.62, prediction.OverTwoAndAHalfGoals);
+    }
+
+    [Fact]
+    public async Task The_chance_of_both_clubs_scoring_is_passed_through()
+    {
+        // Arrange
+        var jev = GivenJev.Returning((1, 0, 0.3)).AndGoals(0.62, 0.71).Build();
+
+        // Act
+        var prediction = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal(0.71, prediction.BothTeamsToScore);
     }
 
     [Fact]

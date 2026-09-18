@@ -4,5 +4,5 @@ using Domain.Model;
 
 public interface IMatchPredictor
 {
-    Task<IReadOnlyList<Prediction>> PredictAsync(Fixture fixture, CancellationToken cancellationToken = default);
+    Task<MatchPrediction> PredictAsync(Fixture fixture, CancellationToken cancellationToken = default);
 }

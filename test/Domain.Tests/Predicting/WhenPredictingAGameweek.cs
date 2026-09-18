@@ -36,7 +36,7 @@ public class WhenPredictingAGameweek
         // Assert
         Assert.Equal(
             results.Select(r => int.Parse(r.Fixture.Id.Split('-')[1])),
-            results.Select(r => r.Predictions[0].HomeScore));
+            results.Select(r => r.Prediction.Scorelines[0].HomeScore));
     }
 
     [Fact]
