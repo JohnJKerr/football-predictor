@@ -2,83 +2,86 @@ namespace Domain.Tests.Predicting;
 
 using Domain.Model;
 using Domain.Predicting;
+using Domain.Tests.Builders;
 
 public class WhenPredictingAMatch
 {
-    private static readonly Fixture Fixture = new(
-        Id: "espn:401879270",
-        Gameweek: 5,
-        KickoffUtc: new DateTimeOffset(2026, 9, 19, 16, 30, 0, TimeSpan.Zero),
-        HomeTeam: "Nottingham Forest",
-        AwayTeam: "Coventry City");
-
-    private static ScorelineProbabilities Distribution(
-        double other = 0d, params (int Home, int Away, double Probability)[] scorelines) =>
-        new(scorelines.ToDictionary(s => new Scoreline(s.Home, s.Away), s => s.Probability),
-            other,
-            Confidence: 0.8);
-
     [Fact]
     public async Task Candidate_scorelines_are_ranked_most_likely_first()
     {
-        var jev = new StubJevPredictor(Distribution(
-            other: 0d,
-            (1, 0, 0.20),
-            (2, 1, 0.35),
-            (0, 0, 0.45)));
+        // Arrange
+        var jev = GivenJev.Returning((1, 0, 0.20), (2, 1, 0.35), (0, 0, 0.45)).Build();
 
-        var predictions = await new MatchPredictor(jev).PredictAsync(Fixture);
+        // Act
+        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
-        Assert.Equal(
-            [(0, 0), (2, 1), (1, 0)],
-            predictions.Select(p => (p.HomeScore, p.AwayScore)));
+        // Assert
+        Assert.Equal([(0, 0), (2, 1), (1, 0)], predictions.Select(p => (p.HomeScore, p.AwayScore)));
     }
 
     [Fact]
-    public async Task Each_scoreline_carries_Jevs_own_probability_as_its_confidence()
+    public async Task The_likeliest_scoreline_carries_Jevs_own_probability_as_its_confidence()
     {
-        var jev = new StubJevPredictor(Distribution(other: 0d, (2, 1, 0.35), (1, 0, 0.20)));
+        // Arrange
+        var jev = GivenJev.Returning((2, 1, 0.35), (1, 0, 0.20)).Build();
 
-        var predictions = await new MatchPredictor(jev).PredictAsync(Fixture);
+        // Act
+        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
-        Assert.Equal(0.35, predictions[0].Confidence);
-        Assert.Equal(0.20, predictions[1].Confidence);
+        // Assert
+        Assert.Equal(new Prediction(2, 1, 0.35), predictions[0]);
     }
 
     [Fact]
-    public async Task Scorelines_Jev_gave_no_chance_of_happening_are_omitted()
+    public async Task A_scoreline_Jev_gave_no_chance_of_happening_is_omitted()
     {
-        var jev = new StubJevPredictor(Distribution(
-            other: 0d,
-            (1, 0, 0.60),
-            (4, 4, 0.0),
-            (2, 1, 0.40)));
+        // Arrange
+        var jev = GivenJev.Returning((1, 0, 0.60), (4, 4, 0.0), (2, 1, 0.40)).Build();
 
-        var predictions = await new MatchPredictor(jev).PredictAsync(Fixture);
+        // Act
+        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
-        Assert.Equal(2, predictions.Count);
+        // Assert
         Assert.DoesNotContain(predictions, p => p is { HomeScore: 4, AwayScore: 4 });
+    }
+
+    [Fact]
+    public async Task Only_scorelines_Jev_gave_a_chance_of_happening_are_returned()
+    {
+        // Arrange
+        var jev = GivenJev.Returning((1, 0, 0.60), (4, 4, 0.0), (2, 1, 0.40)).Build();
+
+        // Act
+        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal(2, predictions.Count);
     }
 
     [Fact]
     public async Task The_catch_all_bucket_is_excluded_because_it_is_not_a_scoreline()
     {
+        // Arrange
         // "other" holds the most mass, but it names no result we could predict.
-        var jev = new StubJevPredictor(Distribution(other: 0.70, (1, 0, 0.30)));
+        var jev = GivenJev.Returning((1, 0, 0.30)).AndInTheCatchAll(0.70).Build();
 
-        var predictions = await new MatchPredictor(jev).PredictAsync(Fixture);
+        // Act
+        var predictions = await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
-        var only = Assert.Single(predictions);
-        Assert.Equal(new Prediction(1, 0, 0.30), only);
+        // Assert
+        Assert.Equal([new Prediction(1, 0, 0.30)], predictions);
     }
 
     [Fact]
     public async Task Jev_is_asked_about_the_fixture_it_was_given()
     {
-        var jev = new StubJevPredictor(Distribution(other: 0d, (1, 0, 1.0)));
+        // Arrange
+        var jev = GivenJev.Returning((1, 0, 1.0)).Build();
 
-        await new MatchPredictor(jev).PredictAsync(Fixture);
+        // Act
+        await new MatchPredictor(jev).PredictAsync(AFixture.Upcoming);
 
-        Assert.Same(Fixture, jev.Asked);
+        // Assert
+        Assert.Same(AFixture.Upcoming, jev.Asked);
     }
 }

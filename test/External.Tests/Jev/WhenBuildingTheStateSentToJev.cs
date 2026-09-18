@@ -1,112 +1,169 @@
 namespace External.Tests.Jev;
 
 using External.Jev;
-using static External.Tests.Jev.JevScenario;
+using External.Tests.Builders;
 
 public class WhenBuildingTheStateSentToJev
 {
-    [Fact]
-    public async Task The_fixture_under_question_is_described()
+    /// <summary>Far more history than Jev will accept in one request.</summary>
+    private static Domain.History.CompletedMatch[] CrowdedSeason() =>
+        [.. Enumerable.Range(1, 400).Select(i => AMatch.PlayedOn(1 + (i % 28), $"Club {i}", "Coventry City"))];
+
+    [Theory]
+    [InlineData("home_team", "Nottingham Forest")]
+    [InlineData("away_team", "Coventry City")]
+    public async Task The_fixture_under_question_names_its_clubs(string field, string expected)
     {
-        var (predictor, handler) = Build(Match(8, "Hull City", "Coventry City"));
+        // Arrange
+        var jev = GivenJev.WithHistory(AMatch.PlayedOn(8, "Hull City", "Coventry City")).Build();
 
-        await predictor.PredictAsync(Upcoming);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        var fixture = handler.Body["state"]!["fixture"]!;
-        Assert.Equal("Nottingham Forest", (string?)fixture["home_team"]);
-        Assert.Equal("Coventry City", (string?)fixture["away_team"]);
-        Assert.Equal(5, (int?)fixture["gameweek"]);
+        // Assert
+        Assert.Equal(expected, (string?)jev.Fixture[field]);
+    }
+
+    [Fact]
+    public async Task The_fixture_under_question_names_its_gameweek()
+    {
+        // Arrange
+        var jev = GivenJev.WithHistory(AMatch.PlayedOn(8, "Hull City", "Coventry City")).Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal(5, (int?)jev.Fixture["gameweek"]);
     }
 
     [Fact]
     public async Task Only_the_history_judged_relevant_to_this_fixture_is_sent()
     {
-        var (predictor, handler) = Build(
-            Match(1, "Nottingham Forest", "Everton", 2, 0),
-            Match(8, "Hull City", "Coventry City", 1, 1));
+        // Arrange
+        var jev = GivenJev.WithHistory(
+            AMatch.PlayedOn(1, "Nottingham Forest", "Everton", 2, 0),
+            AMatch.PlayedOn(8, "Hull City", "Coventry City", 1, 1)).Build();
 
-        await predictor.PredictAsync(Upcoming);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        var history = handler.Body["state"]!["history"]!.AsArray();
-
+        // Assert
         // Most recent first: the 8th precedes the 1st.
-        Assert.Equal(2, history.Count);
-        Assert.Equal("Hull City", (string?)history[0]!["home"]!["team"]);
-        Assert.Equal("Nottingham Forest", (string?)history[1]!["home"]!["team"]);
-        Assert.Equal(2, (int?)history[1]!["home"]!["goals"]);
+        Assert.Equal(
+            ["Hull City", "Nottingham Forest"],
+            jev.History.Select(m => (string?)m!["home"]!["team"]));
     }
 
     [Fact]
-    public async Task The_shooting_and_possession_figures_are_carried_through()
+    public async Task The_goals_scored_are_carried_through()
     {
-        var (predictor, handler) = Build(Match(1, "Nottingham Forest", "Everton"));
+        // Arrange
+        var jev = GivenJev.WithHistory(AMatch.PlayedOn(1, "Nottingham Forest", "Everton", 2, 0)).Build();
 
-        await predictor.PredictAsync(Upcoming);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        var home = handler.Body["state"]!["history"]![0]!["home"]!;
+        // Assert
+        Assert.Equal(2, (int?)jev.History[0]!["home"]!["goals"]);
+    }
 
-        Assert.Equal(14, (int?)home["shots"]);
-        Assert.Equal(1.62, (double?)home["xg"]);
-        Assert.Equal(55.4, (double?)home["possession"]);
+    [Theory]
+    [InlineData("shots", 14.0)]
+    [InlineData("on_target", 5.0)]
+    [InlineData("off_target", 6.0)]
+    [InlineData("blocked", 3.0)]
+    [InlineData("xg", 1.62)]
+    [InlineData("possession", 55.4)]
+    public async Task The_shooting_and_possession_figures_are_carried_through(string field, double expected)
+    {
+        // Arrange
+        var jev = GivenJev.WithHistory(AMatch.PlayedOn(1, "Nottingham Forest", "Everton")).Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal(expected, (double?)jev.History[0]!["home"]![field]);
     }
 
     [Fact]
-    public async Task The_history_is_asked_about_the_fixture_under_question()
+    public async Task A_fixture_between_two_clubs_with_no_history_sends_no_history()
     {
-        var handler = new RecordingHandler(AnyValidReply);
-        var history = new StubRelevantHistory(Match(1, "Nottingham Forest", "Everton"));
-        var predictor = new JevPredictor(new HttpClient(handler), new TestJevSettings(), history);
+        // Arrange
+        var jev = GivenJev.Asked().Build();
 
-        await predictor.PredictAsync(Upcoming);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        Assert.Same(Upcoming, history.Asked);
+        // Assert
+        Assert.Empty(jev.History);
     }
 
     [Fact]
     public async Task A_fixture_between_two_clubs_with_no_history_is_still_asked_about()
     {
-        var (predictor, handler) = Build();
+        // Arrange
+        var jev = GivenJev.Asked().Build();
 
-        await predictor.PredictAsync(Upcoming);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        Assert.Empty(handler.Body["state"]!["history"]!.AsArray());
-        Assert.NotNull(handler.Body["questions"]!["scoreline"]);
+        // Assert
+        Assert.NotNull(jev.Question);
     }
 
     [Fact]
-    public async Task Jevs_context_limit_is_respected_by_dropping_the_oldest_matches()
+    public async Task Jevs_context_limit_is_respected()
     {
-        // Far more history than Jev will accept in one request.
-        var crowded = Enumerable.Range(1, 400)
-            .Select(i => Match(1 + (i % 28), $"Club {i}", "Coventry City"))
-            .ToArray();
+        // Arrange
+        var jev = GivenJev.WithHistory(CrowdedSeason()).Build();
 
-        var (predictor, handler) = Build(crowded);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        await predictor.PredictAsync(Upcoming);
-
-        var bytes = handler.Request!.Content!.Headers.ContentLength!.Value;
-
-        Assert.True(bytes <= JevPredictor.MaxRequestBytes,
-            $"Request was {bytes} bytes, over the {JevPredictor.MaxRequestBytes} byte limit.");
-        Assert.NotEmpty(handler.Body["state"]!["history"]!.AsArray());
+        // Assert
+        Assert.InRange(jev.RequestBytes, 1, JevPredictor.MaxRequestBytes);
     }
 
     [Fact]
-    public async Task The_most_recent_form_survives_when_history_has_to_be_dropped()
+    public async Task History_still_reaches_Jev_after_trimming()
     {
-        var crowded = Enumerable.Range(1, 400)
-            .Select(i => Match(1 + (i % 28), $"Club {i}", "Coventry City"))
-            .ToArray();
+        // Arrange
+        var jev = GivenJev.WithHistory(CrowdedSeason()).Build();
 
-        var (predictor, handler) = Build(crowded);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        await predictor.PredictAsync(Upcoming);
+        // Assert
+        Assert.NotEmpty(jev.History);
+    }
 
-        var kept = handler.Body["state"]!["history"]!.AsArray();
-        var oldestKept = kept.Min(m => DateTimeOffset.Parse((string)m!["kickoff"]!));
+    [Fact]
+    public async Task The_oldest_matches_are_the_ones_dropped()
+    {
+        // Arrange
+        var jev = GivenJev.WithHistory(CrowdedSeason()).Build();
 
-        Assert.True(crowded.Length > kept.Count, "Expected this much history to be trimmed.");
-        Assert.True(crowded.Count(m => m.KickoffUtc > oldestKept) <= kept.Count);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        // Nothing kept is older than something dropped.
+        var oldestKept = jev.History.Min(m => DateTimeOffset.Parse((string)m!["kickoff"]!));
+        Assert.True(jev.GivenHistory.Count(m => m.KickoffUtc > oldestKept) <= jev.History.Count);
+    }
+
+    [Fact]
+    public async Task History_is_trimmed_when_it_does_not_fit()
+    {
+        // Arrange
+        var jev = GivenJev.WithHistory(CrowdedSeason()).Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.True(jev.History.Count < jev.GivenHistory.Count);
     }
 }

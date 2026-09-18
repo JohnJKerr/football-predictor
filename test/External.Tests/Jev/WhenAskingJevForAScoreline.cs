@@ -1,64 +1,183 @@
 namespace External.Tests.Jev;
 
-using static External.Tests.Jev.JevScenario;
+using External.Tests.Builders;
 
 public class WhenAskingJevForAScoreline
 {
     [Fact]
-    public async Task The_request_is_posted_to_the_system_one_endpoint_with_a_bearer_token()
+    public async Task The_request_is_posted()
     {
-        var (predictor, handler) = Build();
+        // Arrange
+        var jev = GivenJev.Asked().Build();
 
-        await predictor.PredictAsync(Upcoming);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        Assert.Equal(HttpMethod.Post, handler.Request!.Method);
-        Assert.Equal("https://api.typesafe.ai/v1/systemone", handler.Request.RequestUri!.ToString());
-        Assert.Equal("Bearer", handler.Request.Headers.Authorization!.Scheme);
-        Assert.Equal("test-api-key", handler.Request.Headers.Authorization.Parameter);
-        Assert.Equal("application/json", handler.Request.Content!.Headers.ContentType!.MediaType);
+        // Assert
+        Assert.Equal(HttpMethod.Post, jev.Request.Method);
+    }
+
+    [Fact]
+    public async Task The_request_goes_to_the_system_one_endpoint()
+    {
+        // Arrange
+        var jev = GivenJev.Asked().Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal("https://api.typesafe.ai/v1/systemone", jev.Request.RequestUri!.ToString());
+    }
+
+    [Fact]
+    public async Task The_api_key_is_sent_as_a_bearer_token()
+    {
+        // Arrange
+        var jev = GivenJev.Asked().Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal(
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "test-api-key"),
+            jev.Request.Headers.Authorization);
+    }
+
+    [Fact]
+    public async Task The_body_is_sent_as_json()
+    {
+        // Arrange
+        var jev = GivenJev.Asked().Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal("application/json", jev.Request.Content!.Headers.ContentType!.MediaType);
     }
 
     [Fact]
     public async Task The_body_carries_a_content_length_rather_than_being_chunked()
     {
+        // Arrange
         // Jev is behind a gateway; a chunked upload with no length is a needless risk.
-        var (predictor, handler) = Build();
+        var jev = GivenJev.Asked().Build();
 
-        await predictor.PredictAsync(Upcoming);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        Assert.NotNull(handler.Request!.Content!.Headers.ContentLength);
+        // Assert
+        Assert.NotNull(jev.Request.Content!.Headers.ContentLength);
     }
 
     [Fact]
-    public async Task A_single_scoreline_choice_question_is_asked_against_the_named_model()
+    public async Task The_question_is_asked_against_the_named_model()
     {
-        var (predictor, handler) = Build();
+        // Arrange
+        var jev = GivenJev.Asked().Build();
 
-        await predictor.PredictAsync(Upcoming);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        Assert.Equal("jev-latest", (string?)handler.Body["model"]);
-
-        var questions = handler.Body["questions"]!.AsObject();
-        Assert.Equal("scoreline", Assert.Single(questions).Key);
-        Assert.Equal("choice", (string?)questions["scoreline"]!["type"]);
-        Assert.False(string.IsNullOrWhiteSpace((string?)questions["scoreline"]!["instructions"]));
+        // Assert
+        Assert.Equal("jev-latest", (string?)jev.Body["model"]);
     }
 
     [Fact]
-    public async Task Every_scoreline_in_the_grid_is_offered_as_an_option_plus_a_catch_all()
+    public async Task A_single_question_is_asked()
     {
-        var (predictor, handler) = Build();
+        // Arrange
+        var jev = GivenJev.Asked().Build();
 
-        await predictor.PredictAsync(Upcoming);
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
 
-        var criteria = handler.Body["questions"]!["scoreline"]!["criteria"]!.AsObject();
+        // Assert
+        Assert.Equal("scoreline", Assert.Single(jev.Body["questions"]!.AsObject()).Key);
+    }
 
+    [Fact]
+    public async Task The_question_is_a_choice()
+    {
+        // Arrange
+        var jev = GivenJev.Asked().Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal("choice", (string?)jev.Question["type"]);
+    }
+
+    [Fact]
+    public async Task The_question_carries_instructions()
+    {
+        // Arrange
+        var jev = GivenJev.Asked().Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.False(string.IsNullOrWhiteSpace((string?)jev.Question["instructions"]));
+    }
+
+    [Fact]
+    public async Task Every_scoreline_in_the_grid_is_offered_plus_a_catch_all()
+    {
+        // Arrange
+        var jev = GivenJev.Asked().Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
         // 7x7 grid of 0-6 goals per side, plus "other".
-        Assert.Equal(50, criteria.Count);
-        Assert.Contains("0-0", criteria.Select(o => o.Key));
-        Assert.Contains("2-1", criteria.Select(o => o.Key));
-        Assert.Contains("6-6", criteria.Select(o => o.Key));
-        Assert.DoesNotContain("7-0", criteria.Select(o => o.Key));
-        Assert.False(string.IsNullOrWhiteSpace((string?)criteria["other"]));
+        Assert.Equal(50, jev.Criteria.Count);
+    }
+
+    [Theory]
+    [InlineData("0-0")]
+    [InlineData("2-1")]
+    [InlineData("6-6")]
+    [InlineData("other")]
+    public async Task The_options_include_the_expected_key(string key)
+    {
+        // Arrange
+        var jev = GivenJev.Asked().Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Contains(key, jev.Criteria.Select(o => o.Key));
+    }
+
+    [Fact]
+    public async Task A_scoreline_beyond_the_grid_is_not_offered()
+    {
+        // Arrange
+        var jev = GivenJev.Asked().Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.DoesNotContain("7-0", jev.Criteria.Select(o => o.Key));
+    }
+
+    [Fact]
+    public async Task The_catch_all_option_is_described()
+    {
+        // Arrange
+        var jev = GivenJev.Asked().Build();
+
+        // Act
+        await jev.PredictAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.False(string.IsNullOrWhiteSpace((string?)jev.Criteria["other"]));
     }
 }

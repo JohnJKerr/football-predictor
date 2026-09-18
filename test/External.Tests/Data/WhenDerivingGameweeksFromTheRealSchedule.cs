@@ -1,7 +1,7 @@
 namespace External.Tests.Data;
 
 using Domain.Schedule;
-using External.Data;
+using External.Tests.Builders;
 
 /// <summary>
 /// The published dataset carries no matchweek field, so gameweeks are derived as blocks of
@@ -10,47 +10,82 @@ using External.Data;
 /// </summary>
 public class WhenDerivingGameweeksFromTheRealSchedule
 {
-    private static GameweekSchedule Schedule() => new(new JsonFileFixtureSource(DataFiles.Fixtures));
+    private static GameweekSchedule Schedule() =>
+        new(GivenAFile.WithFixtures().BuildFixtureSource());
 
     [Fact]
-    public async Task Every_club_plays_exactly_once_in_each_of_the_thirty_eight_gameweeks()
+    public async Task Every_gameweek_holds_ten_fixtures()
     {
+        // Arrange
         var schedule = Schedule();
 
-        for (var gameweek = 1; gameweek <= 38; gameweek++)
-        {
-            var fixtures = await schedule.GetGameweekAsync(gameweek);
+        // Act
+        var counts = await Task.WhenAll(
+            Enumerable.Range(1, 38).Select(async gw => (await schedule.GetGameweekAsync(gw)).Count));
 
-            var clubs = fixtures
-                .SelectMany(f => new[] { f.HomeTeam, f.AwayTeam })
-                .ToList();
+        // Assert
+        Assert.Equal(Enumerable.Repeat(10, 38), counts);
+    }
 
-            Assert.Equal(10, fixtures.Count);
-            Assert.Equal(20, clubs.Distinct().Count());
-        }
+    [Fact]
+    public async Task Every_club_plays_exactly_once_in_each_gameweek()
+    {
+        // Arrange
+        var schedule = Schedule();
+
+        // Act
+        var distinctClubs = await Task.WhenAll(
+            Enumerable.Range(1, 38).Select(async gw =>
+                (await schedule.GetGameweekAsync(gw))
+                    .SelectMany(f => new[] { f.HomeTeam, f.AwayTeam })
+                    .Distinct()
+                    .Count()));
+
+        // Assert
+        Assert.Equal(Enumerable.Repeat(20, 38), distinctClubs);
     }
 
     [Fact]
     public async Task The_season_runs_out_after_thirty_eight_gameweeks()
     {
-        Assert.Empty(await Schedule().GetGameweekAsync(39));
+        // Arrange
+        var schedule = Schedule();
+
+        // Act
+        var gameweek = await schedule.GetGameweekAsync(39);
+
+        // Assert
+        Assert.Empty(gameweek);
     }
 
     [Fact]
     public async Task Gameweek_five_holds_the_round_being_played_this_week()
     {
-        var fixtures = await Schedule().GetGameweekAsync(5);
+        // Arrange
+        var schedule = Schedule();
 
-        Assert.Contains(fixtures, f =>
+        // Act
+        var gameweek = await schedule.GetGameweekAsync(5);
+
+        // Assert
+        Assert.Contains(gameweek, f =>
             f.HomeTeam == "Nottingham Forest" && f.AwayTeam == "Coventry City");
+    }
 
-        // The round spans the weekend of 18-20 September 2026.
-        Assert.All(fixtures, f =>
-        {
-            Assert.InRange(
-                f.KickoffUtc,
-                new DateTimeOffset(2026, 9, 18, 0, 0, 0, TimeSpan.Zero),
-                new DateTimeOffset(2026, 9, 20, 23, 59, 59, TimeSpan.Zero));
-        });
+    [Fact]
+    public async Task Gameweek_five_spans_its_own_weekend()
+    {
+        // Arrange
+        var schedule = Schedule();
+
+        // Act
+        var gameweek = await schedule.GetGameweekAsync(5);
+
+        // Assert
+        // The round runs across 18-20 September 2026.
+        Assert.All(gameweek, f => Assert.InRange(
+            f.KickoffUtc,
+            new DateTimeOffset(2026, 9, 18, 0, 0, 0, TimeSpan.Zero),
+            new DateTimeOffset(2026, 9, 20, 23, 59, 59, TimeSpan.Zero)));
     }
 }

@@ -1,4 +1,4 @@
-namespace External.Tests.Jev;
+namespace External.Tests.Builders;
 
 using System.Net;
 using System.Text.Json.Nodes;

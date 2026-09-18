@@ -1,8 +1,9 @@
 namespace External.Tests.Data;
 
 using Domain.History;
+using Domain.Model;
 using Domain.Schedule;
-using External.Data;
+using External.Tests.Builders;
 
 /// <summary>
 /// Backtesting runs the predictor over rounds the results dataset already contains. These
@@ -11,71 +12,84 @@ using External.Data;
 /// </summary>
 public class WhenPredictingAFixtureAlreadyPlayed
 {
-    private static RelevantHistory History() => new(new JsonFileMatchHistory(DataFiles.Results));
+    private static RelevantHistory History() =>
+        new(GivenAFile.WithResults().BuildMatchHistory());
 
-    private static GameweekSchedule Schedule() => new(new JsonFileFixtureSource(DataFiles.Fixtures));
+    private static GameweekSchedule Schedule() =>
+        new(GivenAFile.WithFixtures().BuildFixtureSource());
 
-    [Fact]
-    public async Task No_fixture_is_given_its_own_result()
+    /// <summary>Gameweeks 1-4 are complete, so every one of these fixtures is in the dataset.</summary>
+    private static async Task<List<(Fixture Fixture, IReadOnlyList<CompletedMatch> Relevant)>> PlayedRounds()
     {
         var history = History();
+        var rows = new List<(Fixture, IReadOnlyList<CompletedMatch>)>();
 
-        // Gameweeks 1-4 are complete, so every one of these fixtures is in the dataset.
         for (var gameweek = 1; gameweek <= 4; gameweek++)
         {
             foreach (var fixture in await Schedule().GetGameweekAsync(gameweek))
             {
-                var relevant = await history.ForAsync(fixture);
-
-                Assert.DoesNotContain(relevant, m =>
-                    m.Involves(fixture.HomeTeam) && m.Involves(fixture.AwayTeam) &&
-                    m.KickoffUtc == fixture.KickoffUtc);
+                rows.Add((fixture, await history.ForAsync(fixture)));
             }
         }
+
+        return rows;
+    }
+
+    [Fact]
+    public async Task No_fixture_is_given_its_own_result()
+    {
+        // Act
+        var rounds = await PlayedRounds();
+
+        // Assert
+        Assert.DoesNotContain(rounds, row => row.Relevant.Any(m =>
+            m.Involves(row.Fixture.HomeTeam) &&
+            m.Involves(row.Fixture.AwayTeam) &&
+            m.KickoffUtc == row.Fixture.KickoffUtc));
     }
 
     [Fact]
     public async Task Nothing_played_after_kickoff_reaches_the_prediction()
     {
-        var history = History();
+        // Act
+        var rounds = await PlayedRounds();
 
-        for (var gameweek = 1; gameweek <= 4; gameweek++)
-        {
-            foreach (var fixture in await Schedule().GetGameweekAsync(gameweek))
-            {
-                var relevant = await history.ForAsync(fixture);
-
-                Assert.All(relevant, m =>
-                    Assert.True(
-                        m.KickoffUtc < fixture.KickoffUtc,
-                        $"GW{gameweek} {fixture.HomeTeam} v {fixture.AwayTeam} was given a " +
-                        $"match kicking off at {m.KickoffUtc:u}, at or after its own {fixture.KickoffUtc:u}."));
-            }
-        }
+        // Assert
+        Assert.DoesNotContain(rounds, row =>
+            row.Relevant.Any(m => m.KickoffUtc >= row.Fixture.KickoffUtc));
     }
 
     [Fact]
     public async Task The_opening_round_has_no_form_to_go_on()
     {
+        // Arrange
         var history = History();
+        var opening = await Schedule().GetGameweekAsync(1);
 
-        foreach (var fixture in await Schedule().GetGameweekAsync(1))
-        {
-            Assert.Empty(await history.ForAsync(fixture));
-        }
+        // Act
+        var relevant = await Task.WhenAll(opening.Select(f => history.ForAsync(f)));
+
+        // Assert
+        Assert.All(relevant, Assert.Empty);
     }
 
     [Fact]
     public async Task By_the_fourth_round_both_clubs_have_form_behind_them()
     {
+        // Arrange
         var history = History();
+        var fourth = await Schedule().GetGameweekAsync(4);
 
-        foreach (var fixture in await Schedule().GetGameweekAsync(4))
-        {
-            var relevant = await history.ForAsync(fixture);
+        // Act
+        var rows = await Task.WhenAll(fourth.Select(async f => (Fixture: f, Relevant: await history.ForAsync(f))));
 
-            Assert.Contains(relevant, m => m.Involves(fixture.HomeTeam));
-            Assert.Contains(relevant, m => m.Involves(fixture.AwayTeam));
-        }
+        // Assert
+        Assert.All(rows, row => Assert.Equal(
+            [true, true],
+            new[]
+            {
+                row.Relevant.Any(m => m.Involves(row.Fixture.HomeTeam)),
+                row.Relevant.Any(m => m.Involves(row.Fixture.AwayTeam)),
+            }));
     }
 }

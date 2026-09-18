@@ -1,145 +1,146 @@
 namespace Domain.Tests.History;
 
-using Domain.History;
-using Domain.Model;
+using Domain.Tests.Builders;
 
 public class WhenSelectingRelevantHistory
 {
-    private static readonly Fixture Fixture = new(
-        "espn:401879270", 5,
-        new DateTimeOffset(2026, 9, 19, 16, 30, 0, TimeSpan.Zero),
-        "Nottingham Forest", "Coventry City");
-
-    private static CompletedMatch Match(int day, string home, string away, int homeGoals = 1, int awayGoals = 0) =>
-        new(new DateTimeOffset(2026, 8, day, 14, 0, 0, TimeSpan.Zero),
-            new TeamPerformance(home, homeGoals, null, null),
-            new TeamPerformance(away, awayGoals, null, null));
-
-    private sealed class Season(params CompletedMatch[] matches) : IMatchHistory
-    {
-        public Task<IReadOnlyList<CompletedMatch>> GetCompletedAsync(CancellationToken cancellationToken = default)
-            => Task.FromResult<IReadOnlyList<CompletedMatch>>(matches);
-    }
-
-    private static RelevantHistory Of(params CompletedMatch[] matches) => new(new Season(matches));
+    private static readonly DateTimeOffset Kickoff = AFixture.Upcoming.KickoffUtc;
 
     [Fact]
     public async Task Only_matches_involving_one_of_the_two_clubs_are_kept()
     {
-        var history = Of(
-            Match(1, "Nottingham Forest", "Everton"),
-            Match(2, "Arsenal", "Liverpool"),
-            Match(3, "Hull City", "Coventry City"));
+        // Arrange
+        var history = GivenAHistory.Of(
+            AMatch.PlayedOn(1, "Nottingham Forest", "Everton"),
+            AMatch.PlayedOn(2, "Arsenal", "Liverpool"),
+            AMatch.PlayedOn(3, "Hull City", "Coventry City")).Build();
 
-        var relevant = await history.ForAsync(Fixture);
+        // Act
+        var relevant = await history.ForAsync(AFixture.Upcoming);
 
-        Assert.Equal(2, relevant.Count);
-        Assert.DoesNotContain(relevant, m => m.Involves("Arsenal"));
+        // Assert
+        Assert.Equal([3, 1], relevant.Select(m => m.KickoffUtc.Day));
     }
 
     [Fact]
     public async Task A_club_is_found_whether_it_played_at_home_or_away()
     {
-        var history = Of(
-            Match(1, "Nottingham Forest", "Everton"),
-            Match(2, "Everton", "Nottingham Forest"));
+        // Arrange
+        var history = GivenAHistory.Of(
+            AMatch.PlayedOn(1, "Nottingham Forest", "Everton"),
+            AMatch.PlayedOn(2, "Everton", "Nottingham Forest")).Build();
 
-        Assert.Equal(2, (await history.ForAsync(Fixture)).Count);
+        // Act
+        var relevant = await history.ForAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Equal(2, relevant.Count);
     }
 
     [Fact]
     public async Task The_most_recent_form_comes_first()
     {
-        var history = Of(
-            Match(1, "Nottingham Forest", "Everton"),
-            Match(20, "Coventry City", "Arsenal"),
-            Match(10, "Hull City", "Nottingham Forest"));
+        // Arrange
+        var history = GivenAHistory.Of(
+            AMatch.PlayedOn(1, "Nottingham Forest", "Everton"),
+            AMatch.PlayedOn(20, "Coventry City", "Arsenal"),
+            AMatch.PlayedOn(10, "Hull City", "Nottingham Forest")).Build();
 
-        var relevant = await history.ForAsync(Fixture);
+        // Act
+        var relevant = await history.ForAsync(AFixture.Upcoming);
 
+        // Assert
         Assert.Equal([20, 10, 1], relevant.Select(m => m.KickoffUtc.Day));
     }
 
     [Fact]
     public async Task A_previous_meeting_between_the_two_clubs_appears_once()
     {
-        var history = Of(Match(1, "Coventry City", "Nottingham Forest"));
+        // Arrange
+        var history = GivenAHistory.Of(AMatch.PlayedOn(1, "Coventry City", "Nottingham Forest")).Build();
 
-        Assert.Single(await history.ForAsync(Fixture));
+        // Act
+        var relevant = await history.ForAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Single(relevant);
     }
 
     [Fact]
     public async Task No_more_than_the_configured_number_of_matches_per_club_is_kept()
     {
-        // Six matches for one club, none for the other.
-        var history = new RelevantHistory(
-            new Season([.. Enumerable.Range(1, 6).Select(d => Match(d, "Nottingham Forest", $"Club {d}"))]),
-            maxMatchesPerClub: 4);
+        // Arrange
+        var played = Enumerable.Range(1, 6)
+            .Select(d => AMatch.PlayedOn(d, "Nottingham Forest", $"Club {d}"))
+            .ToArray();
+        var history = GivenAHistory.Of(played).KeepingAtMostPerClub(4).Build();
 
-        var relevant = await history.ForAsync(Fixture);
+        // Act
+        var relevant = await history.ForAsync(AFixture.Upcoming);
 
-        Assert.Equal(4, relevant.Count);
-        // The four most recent survive.
+        // Assert
         Assert.Equal([6, 5, 4, 3], relevant.Select(m => m.KickoffUtc.Day));
     }
 
     [Fact]
     public async Task The_fixture_being_predicted_is_never_part_of_its_own_history()
     {
+        // Arrange
         // The dataset holds completed matches, so a fixture already played appears in it.
         // Handing it back would let Jev read the answer straight off the state.
-        var history = Of(new CompletedMatch(
-            Fixture.KickoffUtc,
-            new TeamPerformance("Nottingham Forest", 2, null, null),
-            new TeamPerformance("Coventry City", 1, null, null)));
+        var history = GivenAHistory.Of(
+            AMatch.PlayedAt(Kickoff, "Nottingham Forest", "Coventry City", 2, 1)).Build();
 
-        Assert.Empty(await history.ForAsync(Fixture));
+        // Act
+        var relevant = await history.ForAsync(AFixture.Upcoming);
+
+        // Assert
+        Assert.Empty(relevant);
     }
 
     [Fact]
     public async Task Matches_played_after_the_fixture_kicks_off_are_excluded()
     {
-        var history = Of(
-            Match(1, "Nottingham Forest", "Everton"),
-            // Later in the season than the fixture under question.
-            new CompletedMatch(
-                Fixture.KickoffUtc.AddDays(7),
-                new TeamPerformance("Coventry City", 3, null, null),
-                new TeamPerformance("Arsenal", 0, null, null)));
+        // Arrange
+        var history = GivenAHistory.Of(
+            AMatch.PlayedOn(1, "Nottingham Forest", "Everton"),
+            AMatch.PlayedAt(Kickoff.AddDays(7), "Coventry City", "Arsenal", 3, 0)).Build();
 
-        var relevant = await history.ForAsync(Fixture);
+        // Act
+        var relevant = await history.ForAsync(AFixture.Upcoming);
 
-        Assert.Single(relevant);
-        Assert.True(relevant[0].KickoffUtc < Fixture.KickoffUtc);
+        // Assert
+        Assert.Equal([1], relevant.Select(m => m.KickoffUtc.Day));
     }
 
     [Fact]
     public async Task Form_is_counted_from_the_matches_that_preceded_the_fixture()
     {
+        // Arrange
         // Eight earlier matches, capped at four per club, must not be filled out with later ones.
-        var earlier = Enumerable.Range(1, 8)
-            .Select(d => Match(d, "Nottingham Forest", $"Club {d}"));
-        var later = new CompletedMatch(
-            Fixture.KickoffUtc.AddDays(3),
-            new TeamPerformance("Nottingham Forest", 9, null, null),
-            new TeamPerformance("Club Z", 0, null, null));
+        var played = Enumerable.Range(1, 8)
+            .Select(d => AMatch.PlayedOn(d, "Nottingham Forest", $"Club {d}"))
+            .Append(AMatch.PlayedAt(Kickoff.AddDays(3), "Nottingham Forest", "Club Z", 9, 0))
+            .ToArray();
+        var history = GivenAHistory.Of(played).KeepingAtMostPerClub(4).Build();
 
-        var history = new RelevantHistory(new Season([.. earlier, later]), maxMatchesPerClub: 4);
+        // Act
+        var relevant = await history.ForAsync(AFixture.Upcoming);
 
-        var relevant = await history.ForAsync(Fixture);
-
-        Assert.Equal(4, relevant.Count);
-        Assert.All(relevant, m => Assert.True(m.KickoffUtc < Fixture.KickoffUtc));
+        // Assert
         Assert.Equal([8, 7, 6, 5], relevant.Select(m => m.KickoffUtc.Day));
     }
 
     [Fact]
     public async Task A_club_with_no_matches_yet_simply_contributes_nothing()
     {
-        var history = Of(Match(1, "Nottingham Forest", "Everton"));
+        // Arrange
+        var history = GivenAHistory.Of(AMatch.PlayedOn(1, "Nottingham Forest", "Everton")).Build();
 
-        var relevant = await history.ForAsync(Fixture);
+        // Act
+        var relevant = await history.ForAsync(AFixture.Upcoming);
 
+        // Assert
         Assert.Single(relevant);
     }
 }
