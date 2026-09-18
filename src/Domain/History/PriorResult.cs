@@ -11,6 +11,12 @@ public sealed record PriorResult(
     string AwayTeam,
     int AwayScore)
 {
+    /// <summary>
+    /// The season this was played in, named by its opening year: a Premier League season
+    /// runs August to May, so a match in May 2025 belongs to the 2024-25 season.
+    /// </summary>
+    public int Season => Date.Month >= 7 ? Date.Year : Date.Year - 1;
+
     public int TotalGoals => HomeScore + AwayScore;
 
     public bool BothScored => HomeScore > 0 && AwayScore > 0;
