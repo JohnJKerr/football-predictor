@@ -1,0 +1,7992 @@
+{
+  "seasons": [
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "competition": "Premier League",
+  "date_timezone": "Europe/London",
+  "source": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
+  "results": [
+    {
+      "date": "2023-08-11",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2023-08-12",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-12",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-12",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 4,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-12",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-12",
+      "home_team": "Newcastle United",
+      "home_score": 5,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-12",
+      "home_team": "Sheffield United",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-13",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2023-08-13",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-14",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2023-08-18",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Sheffield United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-19",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 3
+    },
+    {
+      "date": "2023-08-19",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-19",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-08-19",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-08-19",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 4
+    },
+    {
+      "date": "2023-08-20",
+      "home_team": "Aston Villa",
+      "home_score": 4,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2023-08-20",
+      "home_team": "West Ham United",
+      "home_score": 3,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-21",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-25",
+      "home_team": "Chelsea",
+      "home_score": 3,
+      "away_team": "Luton Town",
+      "away_score": 0
+    },
+    {
+      "date": "2023-08-26",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2023-08-26",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2023-08-26",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-26",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 3
+    },
+    {
+      "date": "2023-08-26",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2023-08-26",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2023-08-27",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 3
+    },
+    {
+      "date": "2023-08-27",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2023-08-27",
+      "home_team": "Sheffield United",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2023-09-01",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2023-09-02",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2023-09-02",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-02",
+      "home_team": "Burnley",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 5
+    },
+    {
+      "date": "2023-09-02",
+      "home_team": "Chelsea",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-02",
+      "home_team": "Manchester City",
+      "home_score": 5,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-02",
+      "home_team": "Sheffield United",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 2
+    },
+    {
+      "date": "2023-09-03",
+      "home_team": "Arsenal",
+      "home_score": 3,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-03",
+      "home_team": "Crystal Palace",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2023-09-03",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2023-09-16",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-16",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Luton Town",
+      "away_score": 0
+    },
+    {
+      "date": "2023-09-16",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 3
+    },
+    {
+      "date": "2023-09-16",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2023-09-16",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Sheffield United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-16",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2023-09-16",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 3
+    },
+    {
+      "date": "2023-09-17",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2023-09-17",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-18",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-23",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 3
+    },
+    {
+      "date": "2023-09-23",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-23",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2023-09-23",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-23",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2023-09-24",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2023-09-24",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-24",
+      "home_team": "Chelsea",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-24",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-24",
+      "home_team": "Sheffield United",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 8
+    },
+    {
+      "date": "2023-09-30",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 4
+    },
+    {
+      "date": "2023-09-30",
+      "home_team": "Aston Villa",
+      "home_score": 6,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-30",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Luton Town",
+      "away_score": 2
+    },
+    {
+      "date": "2023-09-30",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-30",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2023-09-30",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2023-09-30",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Sheffield United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-09-30",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-01",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-02",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-03",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-07",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 4
+    },
+    {
+      "date": "2023-10-07",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2023-10-07",
+      "home_team": "Everton",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 0
+    },
+    {
+      "date": "2023-10-07",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Sheffield United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-07",
+      "home_team": "Luton Town",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-07",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-08",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 0
+    },
+    {
+      "date": "2023-10-08",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-08",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-08",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-21",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-21",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2023-10-21",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-21",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2023-10-21",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-21",
+      "home_team": "Newcastle United",
+      "home_score": 4,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2023-10-21",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Luton Town",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-21",
+      "home_team": "Sheffield United",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-22",
+      "home_team": "Aston Villa",
+      "home_score": 4,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-23",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2023-10-27",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-28",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-28",
+      "home_team": "Arsenal",
+      "home_score": 5,
+      "away_team": "Sheffield United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-10-28",
+      "home_team": "Chelsea",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-28",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2023-10-29",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-29",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2023-10-29",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2023-10-29",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2023-10-29",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-04",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2023-11-04",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2023-11-04",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-04",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-04",
+      "home_team": "Manchester City",
+      "home_score": 6,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-04",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 0
+    },
+    {
+      "date": "2023-11-04",
+      "home_team": "Sheffield United",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-05",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-05",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2023-11-06",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 4
+    },
+    {
+      "date": "2023-11-11",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-11-11",
+      "home_team": "Arsenal",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-11",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 3
+    },
+    {
+      "date": "2023-11-11",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Luton Town",
+      "away_score": 0
+    },
+    {
+      "date": "2023-11-11",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-12",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-12",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Sheffield United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-12",
+      "home_team": "Chelsea",
+      "home_score": 4,
+      "away_team": "Manchester City",
+      "away_score": 4
+    },
+    {
+      "date": "2023-11-12",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2023-11-12",
+      "home_team": "West Ham United",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2023-11-25",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-25",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2023-11-25",
+      "home_team": "Luton Town",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-25",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-25",
+      "home_team": "Newcastle United",
+      "home_score": 4,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2023-11-25",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 3
+    },
+    {
+      "date": "2023-11-25",
+      "home_team": "Sheffield United",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 3
+    },
+    {
+      "date": "2023-11-26",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 3
+    },
+    {
+      "date": "2023-11-26",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2023-11-27",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-02",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-02",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-02",
+      "home_team": "Burnley",
+      "home_score": 5,
+      "away_team": "Sheffield United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-02",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-02",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-03",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-03",
+      "home_team": "Chelsea",
+      "home_score": 3,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-03",
+      "home_team": "Liverpool",
+      "home_score": 4,
+      "away_team": "Fulham",
+      "away_score": 3
+    },
+    {
+      "date": "2023-12-03",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 3
+    },
+    {
+      "date": "2023-12-03",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-05",
+      "home_team": "Luton Town",
+      "home_score": 3,
+      "away_team": "Arsenal",
+      "away_score": 4
+    },
+    {
+      "date": "2023-12-05",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-06",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-06",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-06",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-06",
+      "home_team": "Fulham",
+      "home_score": 5,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-06",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-06",
+      "home_team": "Sheffield United",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-07",
+      "home_team": "Everton",
+      "home_score": 3,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-07",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-09",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-09",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-09",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-09",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 3
+    },
+    {
+      "date": "2023-12-09",
+      "home_team": "Sheffield United",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-09",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-10",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-10",
+      "home_team": "Fulham",
+      "home_score": 5,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-10",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-10",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 4,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-15",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-16",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-16",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Sheffield United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-16",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-16",
+      "home_team": "Newcastle United",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-17",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-17",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-17",
+      "home_team": "Liverpool",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-17",
+      "home_team": "West Ham United",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-21",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-22",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Sheffield United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-23",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Burnley",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-23",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-23",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-23",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 3
+    },
+    {
+      "date": "2023-12-23",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-23",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-24",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-26",
+      "home_team": "AFC Bournemouth",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-26",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-26",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-26",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 3
+    },
+    {
+      "date": "2023-12-26",
+      "home_team": "Sheffield United",
+      "home_score": 2,
+      "away_team": "Luton Town",
+      "away_score": 3
+    },
+    {
+      "date": "2023-12-27",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 4
+    },
+    {
+      "date": "2023-12-27",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-27",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2023-12-28",
+      "home_team": "Arsenal",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-28",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 4,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-30",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 2
+    },
+    {
+      "date": "2023-12-30",
+      "home_team": "Crystal Palace",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-30",
+      "home_team": "Luton Town",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 3
+    },
+    {
+      "date": "2023-12-30",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Sheffield United",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-30",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-30",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 3,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2023-12-31",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2023-12-31",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2024-01-01",
+      "home_team": "Liverpool",
+      "home_score": 4,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-01-02",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2024-01-12",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-01-13",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2024-01-13",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2024-01-14",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2024-01-14",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2024-01-20",
+      "home_team": "Arsenal",
+      "home_score": 5,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2024-01-20",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2024-01-21",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 4
+    },
+    {
+      "date": "2024-01-21",
+      "home_team": "Sheffield United",
+      "home_score": 2,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-01-22",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2024-01-30",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 3
+    },
+    {
+      "date": "2024-01-30",
+      "home_team": "Crystal Palace",
+      "home_score": 3,
+      "away_team": "Sheffield United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-01-30",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-01-30",
+      "home_team": "Luton Town",
+      "home_score": 4,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2024-01-30",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2024-01-31",
+      "home_team": "Liverpool",
+      "home_score": 4,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2024-01-31",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2024-01-31",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-01",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-01",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 3,
+      "away_team": "Manchester United",
+      "away_score": 4
+    },
+    {
+      "date": "2024-02-03",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 4,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-03",
+      "home_team": "Burnley",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-03",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-03",
+      "home_team": "Newcastle United",
+      "home_score": 4,
+      "away_team": "Luton Town",
+      "away_score": 4
+    },
+    {
+      "date": "2024-02-03",
+      "home_team": "Sheffield United",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 5
+    },
+    {
+      "date": "2024-02-04",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-04",
+      "home_team": "Arsenal",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-04",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 4
+    },
+    {
+      "date": "2024-02-04",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-02-05",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2024-02-10",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-10",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-10",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Sheffield United",
+      "away_score": 3
+    },
+    {
+      "date": "2024-02-10",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-02-10",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 3
+    },
+    {
+      "date": "2024-02-10",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-10",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-11",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-11",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 6
+    },
+    {
+      "date": "2024-02-12",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 3
+    },
+    {
+      "date": "2024-02-17",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 4
+    },
+    {
+      "date": "2024-02-17",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 5
+    },
+    {
+      "date": "2024-02-17",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-17",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-17",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-17",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-02-17",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-18",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-18",
+      "home_team": "Sheffield United",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 5
+    },
+    {
+      "date": "2024-02-19",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-20",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2024-02-21",
+      "home_team": "Liverpool",
+      "home_score": 4,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-24",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-24",
+      "home_team": "Arsenal",
+      "home_score": 4,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-24",
+      "home_team": "Aston Villa",
+      "home_score": 4,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-24",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-02-24",
+      "home_team": "Crystal Palace",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2024-02-24",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2024-02-25",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Sheffield United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-02-26",
+      "home_team": "West Ham United",
+      "home_score": 4,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2024-03-02",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2024-03-02",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 3
+    },
+    {
+      "date": "2024-03-02",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2024-03-02",
+      "home_team": "Luton Town",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 3
+    },
+    {
+      "date": "2024-03-02",
+      "home_team": "Newcastle United",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2024-03-02",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-02",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 3,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-03",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2024-03-03",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-04",
+      "home_team": "Sheffield United",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 6
+    },
+    {
+      "date": "2024-03-09",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Sheffield United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-03-09",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-09",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-09",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-03-09",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-10",
+      "home_team": "Aston Villa",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 4
+    },
+    {
+      "date": "2024-03-10",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2024-03-10",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-10",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 2
+    },
+    {
+      "date": "2024-03-11",
+      "home_team": "Chelsea",
+      "home_score": 3,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-03-13",
+      "home_team": "AFC Bournemouth",
+      "home_score": 4,
+      "away_team": "Luton Town",
+      "away_score": 3
+    },
+    {
+      "date": "2024-03-16",
+      "home_team": "Burnley",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-16",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2024-03-16",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-17",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-30",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-30",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2024-03-30",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-30",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 2
+    },
+    {
+      "date": "2024-03-30",
+      "home_team": "Newcastle United",
+      "home_score": 4,
+      "away_team": "West Ham United",
+      "away_score": 3
+    },
+    {
+      "date": "2024-03-30",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-30",
+      "home_team": "Sheffield United",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 3
+    },
+    {
+      "date": "2024-03-30",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-31",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2024-03-31",
+      "home_team": "Manchester City",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-02",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-02",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-02",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-02",
+      "home_team": "Nottingham Forest",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-02",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-03",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Luton Town",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-03",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-03",
+      "home_team": "Manchester City",
+      "home_score": 4,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-04",
+      "home_team": "Chelsea",
+      "home_score": 4,
+      "away_team": "Manchester United",
+      "away_score": 3
+    },
+    {
+      "date": "2024-04-04",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "Sheffield United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-06",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 3
+    },
+    {
+      "date": "2024-04-06",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 3
+    },
+    {
+      "date": "2024-04-06",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 4
+    },
+    {
+      "date": "2024-04-06",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-06",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-06",
+      "home_team": "Luton Town",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-06",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-07",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-07",
+      "home_team": "Sheffield United",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-07",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-13",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-13",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Sheffield United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-13",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-13",
+      "home_team": "Manchester City",
+      "home_score": 5,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-13",
+      "home_team": "Newcastle United",
+      "home_score": 4,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-13",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-14",
+      "home_team": "Arsenal",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-14",
+      "home_team": "Liverpool",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-14",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-15",
+      "home_team": "Chelsea",
+      "home_score": 6,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-20",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 5
+    },
+    {
+      "date": "2024-04-20",
+      "home_team": "Sheffield United",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 4
+    },
+    {
+      "date": "2024-04-20",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-21",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-21",
+      "home_team": "Crystal Palace",
+      "home_score": 5,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-21",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-21",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 3
+    },
+    {
+      "date": "2024-04-23",
+      "home_team": "Arsenal",
+      "home_score": 5,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-24",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-24",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-24",
+      "home_team": "Manchester United",
+      "home_score": 4,
+      "away_team": "Sheffield United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-24",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-25",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 4
+    },
+    {
+      "date": "2024-04-27",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-27",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-27",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-27",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-27",
+      "home_team": "Newcastle United",
+      "home_score": 5,
+      "away_team": "Sheffield United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-27",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-27",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-04-28",
+      "home_team": "AFC Bournemouth",
+      "home_score": 3,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2024-04-28",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2024-04-28",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 3
+    },
+    {
+      "date": "2024-05-02",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2024-05-03",
+      "home_team": "Luton Town",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-05-04",
+      "home_team": "Arsenal",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 0
+    },
+    {
+      "date": "2024-05-04",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2024-05-04",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 4
+    },
+    {
+      "date": "2024-05-04",
+      "home_team": "Manchester City",
+      "home_score": 5,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2024-05-04",
+      "home_team": "Sheffield United",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 3
+    },
+    {
+      "date": "2024-05-05",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2024-05-05",
+      "home_team": "Chelsea",
+      "home_score": 5,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-05-05",
+      "home_team": "Liverpool",
+      "home_score": 4,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2024-05-06",
+      "home_team": "Crystal Palace",
+      "home_score": 4,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-05-11",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2024-05-11",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Sheffield United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-05-11",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 4
+    },
+    {
+      "date": "2024-05-11",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2024-05-11",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 3
+    },
+    {
+      "date": "2024-05-11",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2024-05-11",
+      "home_team": "West Ham United",
+      "home_score": 3,
+      "away_team": "Luton Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-05-11",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 3
+    },
+    {
+      "date": "2024-05-12",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2024-05-13",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 3
+    },
+    {
+      "date": "2024-05-14",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2024-05-15",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2024-05-15",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 4
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Crystal Palace",
+      "home_score": 5,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Luton Town",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 4
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-05-19",
+      "home_team": "Sheffield United",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 3
+    },
+    {
+      "date": "2024-08-16",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2024-08-17",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2024-08-17",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 3
+    },
+    {
+      "date": "2024-08-17",
+      "home_team": "Ipswich Town",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2024-08-17",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Southampton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-08-17",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-17",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2024-08-18",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-18",
+      "home_team": "Chelsea",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2024-08-19",
+      "home_team": "Leicester City",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-24",
+      "home_team": "Aston Villa",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2024-08-24",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-24",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-08-24",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Leicester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-24",
+      "home_team": "Manchester City",
+      "home_score": 4,
+      "away_team": "Ipswich Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-24",
+      "home_team": "Southampton",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-24",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 4,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-08-25",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-25",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2024-08-25",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 6
+    },
+    {
+      "date": "2024-08-31",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-31",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "Southampton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-31",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 3
+    },
+    {
+      "date": "2024-08-31",
+      "home_team": "Ipswich Town",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-31",
+      "home_team": "Leicester City",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2024-08-31",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2024-08-31",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2024-09-01",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-01",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 3
+    },
+    {
+      "date": "2024-09-01",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-14",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-14",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Everton",
+      "away_score": 2
+    },
+    {
+      "date": "2024-09-14",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Ipswich Town",
+      "away_score": 0
+    },
+    {
+      "date": "2024-09-14",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Leicester City",
+      "away_score": 2
+    },
+    {
+      "date": "2024-09-14",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-14",
+      "home_team": "Liverpool",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-14",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-14",
+      "home_team": "Southampton",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 3
+    },
+    {
+      "date": "2024-09-15",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-15",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-09-21",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-21",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-09-21",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-21",
+      "home_team": "Leicester City",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-21",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 0
+    },
+    {
+      "date": "2024-09-21",
+      "home_team": "Southampton",
+      "home_score": 1,
+      "away_team": "Ipswich Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-21",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-21",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 3
+    },
+    {
+      "date": "2024-09-22",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2024-09-22",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2024-09-28",
+      "home_team": "Arsenal",
+      "home_score": 4,
+      "away_team": "Leicester City",
+      "away_score": 2
+    },
+    {
+      "date": "2024-09-28",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-28",
+      "home_team": "Chelsea",
+      "home_score": 4,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2024-09-28",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-28",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-28",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2024-09-28",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2024-09-29",
+      "home_team": "Ipswich Town",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2024-09-29",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 3
+    },
+    {
+      "date": "2024-09-30",
+      "home_team": "AFC Bournemouth",
+      "home_score": 3,
+      "away_team": "Southampton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-05",
+      "home_team": "Arsenal",
+      "home_score": 3,
+      "away_team": "Southampton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-05",
+      "home_team": "Brentford",
+      "home_score": 5,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 3
+    },
+    {
+      "date": "2024-10-05",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-05",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-10-05",
+      "home_team": "Leicester City",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 0
+    },
+    {
+      "date": "2024-10-05",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2024-10-05",
+      "home_team": "West Ham United",
+      "home_score": 4,
+      "away_team": "Ipswich Town",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-06",
+      "home_team": "Aston Villa",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-10-06",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2024-10-06",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-19",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 0
+    },
+    {
+      "date": "2024-10-19",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 3
+    },
+    {
+      "date": "2024-10-19",
+      "home_team": "Ipswich Town",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 2
+    },
+    {
+      "date": "2024-10-19",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-19",
+      "home_team": "Newcastle United",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-19",
+      "home_team": "Southampton",
+      "home_score": 2,
+      "away_team": "Leicester City",
+      "away_score": 3
+    },
+    {
+      "date": "2024-10-19",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 4,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-20",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-20",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2024-10-21",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2024-10-25",
+      "home_team": "Leicester City",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 3
+    },
+    {
+      "date": "2024-10-26",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-26",
+      "home_team": "Brentford",
+      "home_score": 4,
+      "away_team": "Ipswich Town",
+      "away_score": 3
+    },
+    {
+      "date": "2024-10-26",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2024-10-26",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-26",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Southampton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-10-27",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2024-10-27",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-10-27",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2024-10-27",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-02",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-02",
+      "home_team": "Ipswich Town",
+      "home_score": 1,
+      "away_team": "Leicester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-02",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-02",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-02",
+      "home_team": "Nottingham Forest",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-02",
+      "home_team": "Southampton",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-02",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2024-11-03",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-03",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 4,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-04",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-09",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2024-11-09",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-09",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2024-11-09",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-09",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-09",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Southampton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-10",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-10",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Leicester City",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-10",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 3
+    },
+    {
+      "date": "2024-11-10",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Ipswich Town",
+      "away_score": 2
+    },
+    {
+      "date": "2024-11-23",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2024-11-23",
+      "home_team": "Arsenal",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-23",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2024-11-23",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-23",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 4
+    },
+    {
+      "date": "2024-11-23",
+      "home_team": "Leicester City",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2024-11-23",
+      "home_team": "Manchester City",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 4
+    },
+    {
+      "date": "2024-11-24",
+      "home_team": "Ipswich Town",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-24",
+      "home_team": "Southampton",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 3
+    },
+    {
+      "date": "2024-11-25",
+      "home_team": "Newcastle United",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-11-29",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Southampton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-30",
+      "home_team": "Brentford",
+      "home_score": 4,
+      "away_team": "Leicester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-30",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-11-30",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Ipswich Town",
+      "away_score": 0
+    },
+    {
+      "date": "2024-11-30",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 5
+    },
+    {
+      "date": "2024-11-30",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 4
+    },
+    {
+      "date": "2024-12-01",
+      "home_team": "Chelsea",
+      "home_score": 3,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-01",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-01",
+      "home_team": "Manchester United",
+      "home_score": 4,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-01",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-03",
+      "home_team": "Ipswich Town",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-03",
+      "home_team": "Leicester City",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-04",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-04",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-04",
+      "home_team": "Everton",
+      "home_score": 4,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-04",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-04",
+      "home_team": "Newcastle United",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 3
+    },
+    {
+      "date": "2024-12-04",
+      "home_team": "Southampton",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 5
+    },
+    {
+      "date": "2024-12-05",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-05",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-07",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Southampton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-07",
+      "home_team": "Brentford",
+      "home_score": 4,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-07",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-07",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 3
+    },
+    {
+      "date": "2024-12-08",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-08",
+      "home_team": "Ipswich Town",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-08",
+      "home_team": "Leicester City",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-08",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 3,
+      "away_team": "Chelsea",
+      "away_score": 4
+    },
+    {
+      "date": "2024-12-09",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-14",
+      "home_team": "Arsenal",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-14",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-14",
+      "home_team": "Newcastle United",
+      "home_score": 4,
+      "away_team": "Leicester City",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-14",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-14",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Ipswich Town",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-15",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 3
+    },
+    {
+      "date": "2024-12-15",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-15",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-15",
+      "home_team": "Southampton",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 5
+    },
+    {
+      "date": "2024-12-16",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-21",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-21",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-21",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 5
+    },
+    {
+      "date": "2024-12-21",
+      "home_team": "Ipswich Town",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 4
+    },
+    {
+      "date": "2024-12-21",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-22",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-22",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Southampton",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-22",
+      "home_team": "Leicester City",
+      "home_score": 0,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 3
+    },
+    {
+      "date": "2024-12-22",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 3
+    },
+    {
+      "date": "2024-12-22",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 6
+    },
+    {
+      "date": "2024-12-26",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-26",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-26",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "Leicester City",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-26",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-26",
+      "home_team": "Newcastle United",
+      "home_score": 3,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-26",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-26",
+      "home_team": "Southampton",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-26",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-27",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Ipswich Town",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-27",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-29",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Southampton",
+      "away_score": 1
+    },
+    {
+      "date": "2024-12-29",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-29",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-29",
+      "home_team": "Leicester City",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-29",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-29",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 5
+    },
+    {
+      "date": "2024-12-30",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2024-12-30",
+      "home_team": "Ipswich Town",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2024-12-30",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-01",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 3
+    },
+    {
+      "date": "2025-01-04",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-01-04",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Leicester City",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-04",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-04",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-04",
+      "home_team": "Manchester City",
+      "home_score": 4,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-04",
+      "home_team": "Southampton",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 5
+    },
+    {
+      "date": "2025-01-04",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-05",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Ipswich Town",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-05",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-06",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 3
+    },
+    {
+      "date": "2025-01-14",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-14",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-14",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-14",
+      "home_team": "West Ham United",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-15",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-15",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-15",
+      "home_team": "Leicester City",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-15",
+      "home_team": "Newcastle United",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2025-01-16",
+      "home_team": "Ipswich Town",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-16",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Southampton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-18",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-18",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-18",
+      "home_team": "Leicester City",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-18",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 4
+    },
+    {
+      "date": "2025-01-18",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-19",
+      "home_team": "Everton",
+      "home_score": 3,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-19",
+      "home_team": "Ipswich Town",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 6
+    },
+    {
+      "date": "2025-01-19",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 3
+    },
+    {
+      "date": "2025-01-19",
+      "home_team": "Nottingham Forest",
+      "home_score": 3,
+      "away_team": "Southampton",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-20",
+      "home_team": "Chelsea",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-25",
+      "home_team": "AFC Bournemouth",
+      "home_score": 5,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2025-01-25",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-25",
+      "home_team": "Liverpool",
+      "home_score": 4,
+      "away_team": "Ipswich Town",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-25",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-25",
+      "home_team": "Southampton",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 3
+    },
+    {
+      "date": "2025-01-25",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-26",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-26",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2025-01-26",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-01-26",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Leicester City",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-01",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-01",
+      "home_team": "Everton",
+      "home_score": 4,
+      "away_team": "Leicester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-02-01",
+      "home_team": "Ipswich Town",
+      "home_score": 1,
+      "away_team": "Southampton",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-01",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-01",
+      "home_team": "Nottingham Forest",
+      "home_score": 7,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2025-02-01",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2025-02-02",
+      "home_team": "Arsenal",
+      "home_score": 5,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-02",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-02",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-03",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-12",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-14",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2025-02-15",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Ipswich Town",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-15",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-15",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-15",
+      "home_team": "Leicester City",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-15",
+      "home_team": "Manchester City",
+      "home_score": 4,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-02-15",
+      "home_team": "Southampton",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 3
+    },
+    {
+      "date": "2025-02-15",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-16",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-16",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-02-19",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-21",
+      "home_team": "Leicester City",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 4
+    },
+    {
+      "date": "2025-02-22",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-22",
+      "home_team": "Arsenal",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-22",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-22",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-22",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-22",
+      "home_team": "Ipswich Town",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 4
+    },
+    {
+      "date": "2025-02-22",
+      "home_team": "Southampton",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 4
+    },
+    {
+      "date": "2025-02-23",
+      "home_team": "Manchester City",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-23",
+      "home_team": "Newcastle United",
+      "home_score": 4,
+      "away_team": "Nottingham Forest",
+      "away_score": 3
+    },
+    {
+      "date": "2025-02-25",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-25",
+      "home_team": "Chelsea",
+      "home_score": 4,
+      "away_team": "Southampton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-02-25",
+      "home_team": "Crystal Palace",
+      "home_score": 4,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-25",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-26",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-26",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-02-26",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Ipswich Town",
+      "away_score": 2
+    },
+    {
+      "date": "2025-02-26",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 0
+    },
+    {
+      "date": "2025-02-26",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2025-02-27",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Leicester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-03-08",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2025-03-08",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2025-03-08",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Ipswich Town",
+      "away_score": 0
+    },
+    {
+      "date": "2025-03-08",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "Southampton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-03-08",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-03-08",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-03-09",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Leicester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-03-09",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2025-03-09",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2025-03-10",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-03-15",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2025-03-15",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-03-15",
+      "home_team": "Ipswich Town",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 4
+    },
+    {
+      "date": "2025-03-15",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2025-03-15",
+      "home_team": "Southampton",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2025-03-16",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2025-03-16",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2025-03-16",
+      "home_team": "Leicester City",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 3
+    },
+    {
+      "date": "2025-04-01",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-01",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-01",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-02",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Ipswich Town",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-02",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 3
+    },
+    {
+      "date": "2025-04-02",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-02",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Leicester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-02",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-02",
+      "home_team": "Southampton",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-03",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-05",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-05",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-05",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-05",
+      "home_team": "Ipswich Town",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-05",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-06",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-06",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-06",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-06",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 3,
+      "away_team": "Southampton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-07",
+      "home_team": "Leicester City",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 3
+    },
+    {
+      "date": "2025-04-12",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-12",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Leicester City",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-12",
+      "home_team": "Manchester City",
+      "home_score": 5,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-12",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-12",
+      "home_team": "Southampton",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 3
+    },
+    {
+      "date": "2025-04-13",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Ipswich Town",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-13",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-13",
+      "home_team": "Newcastle United",
+      "home_score": 4,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-13",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 4,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-14",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-16",
+      "home_team": "Newcastle United",
+      "home_score": 5,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-19",
+      "home_team": "Aston Villa",
+      "home_score": 4,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-19",
+      "home_team": "Brentford",
+      "home_score": 4,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-19",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-19",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-19",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Southampton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-20",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-20",
+      "home_team": "Ipswich Town",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 4
+    },
+    {
+      "date": "2025-04-20",
+      "home_team": "Leicester City",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-20",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-21",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-22",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-23",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-26",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-26",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-26",
+      "home_team": "Newcastle United",
+      "home_score": 3,
+      "away_team": "Ipswich Town",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-26",
+      "home_team": "Southampton",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2025-04-26",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 3,
+      "away_team": "Leicester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-04-27",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-04-27",
+      "home_team": "Liverpool",
+      "home_score": 5,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-01",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-02",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-03",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-03",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-03",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Ipswich Town",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-03",
+      "home_team": "Leicester City",
+      "home_score": 2,
+      "away_team": "Southampton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-04",
+      "home_team": "Brentford",
+      "home_score": 4,
+      "away_team": "Manchester United",
+      "away_score": 3
+    },
+    {
+      "date": "2025-05-04",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-04",
+      "home_team": "Chelsea",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-04",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-05",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-10",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-10",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 3
+    },
+    {
+      "date": "2025-05-10",
+      "home_team": "Ipswich Town",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-10",
+      "home_team": "Southampton",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-10",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-11",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-11",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-11",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-11",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Leicester City",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-11",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-16",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-16",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-18",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-18",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 3
+    },
+    {
+      "date": "2025-05-18",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Southampton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-18",
+      "home_team": "Leicester City",
+      "home_score": 2,
+      "away_team": "Ipswich Town",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-18",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-19",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-20",
+      "home_team": "Crystal Palace",
+      "home_score": 4,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-20",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Leicester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "Ipswich Town",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 3
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "Newcastle United",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "Southampton",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 4
+    },
+    {
+      "date": "2025-05-25",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2025-08-15",
+      "home_team": "Liverpool",
+      "home_score": 4,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2025-08-16",
+      "home_team": "Aston Villa",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-16",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2025-08-16",
+      "home_team": "Sunderland",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-16",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-16",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 4
+    },
+    {
+      "date": "2025-08-17",
+      "home_team": "Chelsea",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-17",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2025-08-17",
+      "home_team": "Nottingham Forest",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2025-08-18",
+      "home_team": "Leeds United",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-22",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 5
+    },
+    {
+      "date": "2025-08-23",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-23",
+      "home_team": "Arsenal",
+      "home_score": 5,
+      "away_team": "Leeds United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-23",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-23",
+      "home_team": "Burnley",
+      "home_score": 2,
+      "away_team": "Sunderland",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-23",
+      "home_team": "Manchester City",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2025-08-24",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2025-08-24",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-24",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-08-25",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 3
+    },
+    {
+      "date": "2025-08-30",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-30",
+      "home_team": "Leeds United",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-30",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 2
+    },
+    {
+      "date": "2025-08-30",
+      "home_team": "Sunderland",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2025-08-30",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2025-08-30",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 3
+    },
+    {
+      "date": "2025-08-31",
+      "home_team": "Aston Villa",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 3
+    },
+    {
+      "date": "2025-08-31",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2025-08-31",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 0
+    },
+    {
+      "date": "2025-08-31",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 3
+    },
+    {
+      "date": "2025-09-13",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-13",
+      "home_team": "Arsenal",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2025-09-13",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2025-09-13",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Sunderland",
+      "away_score": 0
+    },
+    {
+      "date": "2025-09-13",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2025-09-13",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Leeds United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-09-13",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2025-09-13",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 3
+    },
+    {
+      "date": "2025-09-14",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-14",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-09-20",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2025-09-20",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-20",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-20",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-20",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-20",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-09-20",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Leeds United",
+      "away_score": 3
+    },
+    {
+      "date": "2025-09-21",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-09-21",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-21",
+      "home_team": "Sunderland",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-27",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-27",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 3
+    },
+    {
+      "date": "2025-09-27",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-27",
+      "home_team": "Leeds United",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2025-09-27",
+      "home_team": "Manchester City",
+      "home_score": 5,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-27",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Sunderland",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-27",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-28",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2025-09-28",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2025-09-29",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-03",
+      "home_team": "AFC Bournemouth",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-04",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-10-04",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-04",
+      "home_team": "Leeds United",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2025-10-04",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Sunderland",
+      "away_score": 0
+    },
+    {
+      "date": "2025-10-05",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-05",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-05",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-05",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2025-10-05",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-18",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-18",
+      "home_team": "Burnley",
+      "home_score": 2,
+      "away_team": "Leeds United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-10-18",
+      "home_team": "Crystal Palace",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 3
+    },
+    {
+      "date": "2025-10-18",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-18",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-10-18",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 3
+    },
+    {
+      "date": "2025-10-18",
+      "home_team": "Sunderland",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2025-10-19",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-10-19",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2025-10-20",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2025-10-24",
+      "home_team": "Leeds United",
+      "home_score": 2,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-25",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-10-25",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Sunderland",
+      "away_score": 2
+    },
+    {
+      "date": "2025-10-25",
+      "home_team": "Manchester United",
+      "home_score": 4,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2025-10-25",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2025-10-26",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2025-10-26",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2025-10-26",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 0
+    },
+    {
+      "date": "2025-10-26",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 3
+    },
+    {
+      "date": "2025-10-26",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 3
+    },
+    {
+      "date": "2025-11-01",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "Leeds United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-01",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-01",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-01",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-01",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-01",
+      "home_team": "Nottingham Forest",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-01",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-02",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-02",
+      "home_team": "West Ham United",
+      "home_score": 3,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-03",
+      "home_team": "Sunderland",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-08",
+      "home_team": "Chelsea",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-08",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-08",
+      "home_team": "Sunderland",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-08",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-08",
+      "home_team": "West Ham United",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-09",
+      "home_team": "Aston Villa",
+      "home_score": 4,
+      "away_team": "AFC Bournemouth",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-09",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-09",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-09",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-09",
+      "home_team": "Nottingham Forest",
+      "home_score": 3,
+      "away_team": "Leeds United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-22",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-22",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-22",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-22",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Sunderland",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-22",
+      "home_team": "Liverpool",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 3
+    },
+    {
+      "date": "2025-11-22",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-22",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-23",
+      "home_team": "Arsenal",
+      "home_score": 4,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-23",
+      "home_team": "Leeds United",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-24",
+      "home_team": "Manchester United",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-29",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-29",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 4
+    },
+    {
+      "date": "2025-11-29",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Leeds United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-29",
+      "home_team": "Sunderland",
+      "home_score": 3,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-29",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-30",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2025-11-30",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2025-11-30",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-30",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2025-11-30",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-02",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-02",
+      "home_team": "Fulham",
+      "home_score": 4,
+      "away_team": "Manchester City",
+      "away_score": 5
+    },
+    {
+      "date": "2025-12-02",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-03",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-03",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "Aston Villa",
+      "away_score": 4
+    },
+    {
+      "date": "2025-12-03",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-03",
+      "home_team": "Leeds United",
+      "home_score": 3,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-03",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Sunderland",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-03",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-04",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-06",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-06",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-06",
+      "home_team": "Everton",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-06",
+      "home_team": "Leeds United",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 3
+    },
+    {
+      "date": "2025-12-06",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Sunderland",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-06",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-06",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-07",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-07",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-08",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 4
+    },
+    {
+      "date": "2025-12-13",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-13",
+      "home_team": "Burnley",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 3
+    },
+    {
+      "date": "2025-12-13",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-13",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-14",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Leeds United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-14",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2025-12-14",
+      "home_team": "Nottingham Forest",
+      "home_score": 3,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-14",
+      "home_team": "Sunderland",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-14",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 3
+    },
+    {
+      "date": "2025-12-15",
+      "home_team": "Manchester United",
+      "home_score": 4,
+      "away_team": "AFC Bournemouth",
+      "away_score": 4
+    },
+    {
+      "date": "2025-12-20",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-20",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Sunderland",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-20",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-20",
+      "home_team": "Leeds United",
+      "home_score": 4,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-20",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-20",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-20",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-20",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-21",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-22",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-26",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-27",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-27",
+      "home_team": "Brentford",
+      "home_score": 4,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-27",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2025-12-27",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-27",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-27",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-27",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-28",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-28",
+      "home_team": "Sunderland",
+      "home_score": 1,
+      "away_team": "Leeds United",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-30",
+      "home_team": "Arsenal",
+      "home_score": 4,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-30",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 3
+    },
+    {
+      "date": "2025-12-30",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-30",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2025-12-30",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 2
+    },
+    {
+      "date": "2025-12-30",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-01",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-01",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-01",
+      "home_team": "Liverpool",
+      "home_score": 0,
+      "away_team": "Leeds United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-01",
+      "home_team": "Sunderland",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-03",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 3
+    },
+    {
+      "date": "2026-01-03",
+      "home_team": "Aston Villa",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-03",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-03",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-04",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 4
+    },
+    {
+      "date": "2026-01-04",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-04",
+      "home_team": "Leeds United",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-04",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-04",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-04",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Sunderland",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-06",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-07",
+      "home_team": "AFC Bournemouth",
+      "home_score": 3,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-07",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "Sunderland",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-07",
+      "home_team": "Burnley",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-07",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-07",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-07",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-07",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-07",
+      "home_team": "Newcastle United",
+      "home_score": 4,
+      "away_team": "Leeds United",
+      "away_score": 3
+    },
+    {
+      "date": "2026-01-08",
+      "home_team": "Arsenal",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-17",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-17",
+      "home_team": "Leeds United",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-17",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-17",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-17",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-17",
+      "home_team": "Sunderland",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-17",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-18",
+      "home_team": "Aston Villa",
+      "home_score": 0,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-18",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-19",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-24",
+      "home_team": "AFC Bournemouth",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-24",
+      "home_team": "Burnley",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-24",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-24",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2026-01-24",
+      "home_team": "West Ham United",
+      "home_score": 3,
+      "away_team": "Sunderland",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-25",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 3
+    },
+    {
+      "date": "2026-01-25",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-25",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 3
+    },
+    {
+      "date": "2026-01-25",
+      "home_team": "Newcastle United",
+      "home_score": 0,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-26",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Leeds United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-31",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-31",
+      "home_team": "Chelsea",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-01-31",
+      "home_team": "Leeds United",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 4
+    },
+    {
+      "date": "2026-01-31",
+      "home_team": "Liverpool",
+      "home_score": 4,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-01-31",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-01",
+      "home_team": "Aston Villa",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-01",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-01",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-01",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-02",
+      "home_team": "Sunderland",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2026-02-06",
+      "home_team": "Leeds United",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-07",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-07",
+      "home_team": "Arsenal",
+      "home_score": 3,
+      "away_team": "Sunderland",
+      "away_score": 0
+    },
+    {
+      "date": "2026-02-07",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-07",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-07",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2026-02-07",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 3
+    },
+    {
+      "date": "2026-02-07",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 3
+    },
+    {
+      "date": "2026-02-08",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-08",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-10",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Leeds United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-10",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-10",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-10",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-11",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2026-02-11",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 3
+    },
+    {
+      "date": "2026-02-11",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2026-02-11",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2026-02-11",
+      "home_team": "Sunderland",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-12",
+      "home_team": "Brentford",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-18",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-21",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Leeds United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-21",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-21",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-21",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-21",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 0
+    },
+    {
+      "date": "2026-02-22",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2026-02-22",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-22",
+      "home_team": "Sunderland",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 3
+    },
+    {
+      "date": "2026-02-22",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 4
+    },
+    {
+      "date": "2026-02-23",
+      "home_team": "Everton",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-27",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2026-02-28",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Sunderland",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-28",
+      "home_team": "Burnley",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 4
+    },
+    {
+      "date": "2026-02-28",
+      "home_team": "Leeds United",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2026-02-28",
+      "home_team": "Liverpool",
+      "home_score": 5,
+      "away_team": "West Ham United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-02-28",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 3
+    },
+    {
+      "date": "2026-03-01",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-01",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-01",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-01",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-03",
+      "home_team": "AFC Bournemouth",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2026-03-03",
+      "home_team": "Everton",
+      "home_score": 2,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2026-03-03",
+      "home_team": "Leeds United",
+      "home_score": 0,
+      "away_team": "Sunderland",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-03",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-04",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 4
+    },
+    {
+      "date": "2026-03-04",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-04",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-04",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2026-03-04",
+      "home_team": "Newcastle United",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-05",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Crystal Palace",
+      "away_score": 3
+    },
+    {
+      "date": "2026-03-14",
+      "home_team": "Arsenal",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2026-03-14",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 0
+    },
+    {
+      "date": "2026-03-14",
+      "home_team": "Chelsea",
+      "home_score": 0,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-14",
+      "home_team": "Sunderland",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-14",
+      "home_team": "West Ham United",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-15",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "Leeds United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-03-15",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-15",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-15",
+      "home_team": "Nottingham Forest",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2026-03-16",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 2
+    },
+    {
+      "date": "2026-03-20",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Manchester United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-03-21",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 2,
+      "away_team": "Liverpool",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-21",
+      "home_team": "Everton",
+      "home_score": 3,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2026-03-21",
+      "home_team": "Fulham",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2026-03-21",
+      "home_team": "Leeds United",
+      "home_score": 0,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2026-03-22",
+      "home_team": "Aston Villa",
+      "home_score": 2,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-03-22",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "Sunderland",
+      "away_score": 2
+    },
+    {
+      "date": "2026-03-22",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 3
+    },
+    {
+      "date": "2026-04-10",
+      "home_team": "West Ham United",
+      "home_score": 4,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2026-04-11",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2026-04-11",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 2
+    },
+    {
+      "date": "2026-04-11",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2026-04-11",
+      "home_team": "Liverpool",
+      "home_score": 2,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2026-04-12",
+      "home_team": "Chelsea",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2026-04-12",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-04-12",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 1
+    },
+    {
+      "date": "2026-04-12",
+      "home_team": "Sunderland",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 0
+    },
+    {
+      "date": "2026-04-13",
+      "home_team": "Manchester United",
+      "home_score": 1,
+      "away_team": "Leeds United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-04-18",
+      "home_team": "Brentford",
+      "home_score": 0,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2026-04-18",
+      "home_team": "Chelsea",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-04-18",
+      "home_team": "Leeds United",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2026-04-18",
+      "home_team": "Newcastle United",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 2
+    },
+    {
+      "date": "2026-04-18",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 2,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 2
+    },
+    {
+      "date": "2026-04-19",
+      "home_team": "Aston Villa",
+      "home_score": 4,
+      "away_team": "Sunderland",
+      "away_score": 3
+    },
+    {
+      "date": "2026-04-19",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2026-04-19",
+      "home_team": "Manchester City",
+      "home_score": 2,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2026-04-19",
+      "home_team": "Nottingham Forest",
+      "home_score": 4,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2026-04-20",
+      "home_team": "Crystal Palace",
+      "home_score": 0,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-04-21",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "Chelsea",
+      "away_score": 0
+    },
+    {
+      "date": "2026-04-22",
+      "home_team": "AFC Bournemouth",
+      "home_score": 2,
+      "away_team": "Leeds United",
+      "away_score": 2
+    },
+    {
+      "date": "2026-04-22",
+      "home_team": "Burnley",
+      "home_score": 0,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2026-04-24",
+      "home_team": "Sunderland",
+      "home_score": 0,
+      "away_team": "Nottingham Forest",
+      "away_score": 5
+    },
+    {
+      "date": "2026-04-25",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-04-25",
+      "home_team": "Fulham",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 0
+    },
+    {
+      "date": "2026-04-25",
+      "home_team": "Liverpool",
+      "home_score": 3,
+      "away_team": "Crystal Palace",
+      "away_score": 1
+    },
+    {
+      "date": "2026-04-25",
+      "home_team": "West Ham United",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 1
+    },
+    {
+      "date": "2026-04-25",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 0,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2026-04-27",
+      "home_team": "Manchester United",
+      "home_score": 2,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-01",
+      "home_team": "Leeds United",
+      "home_score": 3,
+      "away_team": "Burnley",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-02",
+      "home_team": "Arsenal",
+      "home_score": 3,
+      "away_team": "Fulham",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-02",
+      "home_team": "Brentford",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-02",
+      "home_team": "Newcastle United",
+      "home_score": 3,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-02",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Sunderland",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-03",
+      "home_team": "AFC Bournemouth",
+      "home_score": 3,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-03",
+      "home_team": "Aston Villa",
+      "home_score": 1,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 2
+    },
+    {
+      "date": "2026-05-03",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2026-05-04",
+      "home_team": "Chelsea",
+      "home_score": 1,
+      "away_team": "Nottingham Forest",
+      "away_score": 3
+    },
+    {
+      "date": "2026-05-04",
+      "home_team": "Everton",
+      "home_score": 3,
+      "away_team": "Manchester City",
+      "away_score": 3
+    },
+    {
+      "date": "2026-05-09",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 3,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-09",
+      "home_team": "Fulham",
+      "home_score": 0,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-09",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-09",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Brentford",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-09",
+      "home_team": "Sunderland",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-10",
+      "home_team": "Burnley",
+      "home_score": 2,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2026-05-10",
+      "home_team": "Crystal Palace",
+      "home_score": 2,
+      "away_team": "Everton",
+      "away_score": 2
+    },
+    {
+      "date": "2026-05-10",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "Newcastle United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-10",
+      "home_team": "West Ham United",
+      "home_score": 0,
+      "away_team": "Arsenal",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-11",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Leeds United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-13",
+      "home_team": "Manchester City",
+      "home_score": 3,
+      "away_team": "Crystal Palace",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-15",
+      "home_team": "Aston Villa",
+      "home_score": 4,
+      "away_team": "Liverpool",
+      "away_score": 2
+    },
+    {
+      "date": "2026-05-17",
+      "home_team": "Brentford",
+      "home_score": 2,
+      "away_team": "Crystal Palace",
+      "away_score": 2
+    },
+    {
+      "date": "2026-05-17",
+      "home_team": "Everton",
+      "home_score": 1,
+      "away_team": "Sunderland",
+      "away_score": 3
+    },
+    {
+      "date": "2026-05-17",
+      "home_team": "Leeds United",
+      "home_score": 1,
+      "away_team": "Brighton & Hove Albion",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-17",
+      "home_team": "Manchester United",
+      "home_score": 3,
+      "away_team": "Nottingham Forest",
+      "away_score": 2
+    },
+    {
+      "date": "2026-05-17",
+      "home_team": "Newcastle United",
+      "home_score": 3,
+      "away_team": "West Ham United",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-17",
+      "home_team": "Wolverhampton Wanderers",
+      "home_score": 1,
+      "away_team": "Fulham",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-18",
+      "home_team": "Arsenal",
+      "home_score": 1,
+      "away_team": "Burnley",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-19",
+      "home_team": "AFC Bournemouth",
+      "home_score": 1,
+      "away_team": "Manchester City",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-19",
+      "home_team": "Chelsea",
+      "home_score": 2,
+      "away_team": "Tottenham Hotspur",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "Brighton & Hove Albion",
+      "home_score": 0,
+      "away_team": "Manchester United",
+      "away_score": 3
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "Burnley",
+      "home_score": 1,
+      "away_team": "Wolverhampton Wanderers",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "Crystal Palace",
+      "home_score": 1,
+      "away_team": "Arsenal",
+      "away_score": 2
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "Fulham",
+      "home_score": 2,
+      "away_team": "Newcastle United",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "Liverpool",
+      "home_score": 1,
+      "away_team": "Brentford",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "Manchester City",
+      "home_score": 1,
+      "away_team": "Aston Villa",
+      "away_score": 2
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "Nottingham Forest",
+      "home_score": 1,
+      "away_team": "AFC Bournemouth",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "Sunderland",
+      "home_score": 2,
+      "away_team": "Chelsea",
+      "away_score": 1
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "Tottenham Hotspur",
+      "home_score": 1,
+      "away_team": "Everton",
+      "away_score": 0
+    },
+    {
+      "date": "2026-05-24",
+      "home_team": "West Ham United",
+      "home_score": 3,
+      "away_team": "Leeds United",
+      "away_score": 0
+    }
+  ]
+}
