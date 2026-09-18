@@ -94,6 +94,100 @@ public class WhenRequestingAGameweek
     }
 
     [Fact]
+    public async Task The_likeliest_outcome_is_reported()
+    {
+        // Arrange
+        var controller = GivenAGameweek.With("Everton", "Ipswich Town", 14, (2, 1, 0.31))
+            .Forecasting(home: 0.24, draw: 0.31, away: 0.45, confidence: 0.58, over: 0.62, bothScore: 0.71)
+            .Build();
+
+        // Act
+        var result = await controller.Get(5);
+
+        // Assert
+        Assert.Equal("AwayWin", Assert.Single(Ok(result).Fixtures).Outcome!.Result);
+    }
+
+    [Fact]
+    public async Task The_probability_of_each_outcome_is_reported()
+    {
+        // Arrange
+        var controller = GivenAGameweek.With("Everton", "Ipswich Town", 14, (2, 1, 0.31))
+            .Forecasting(home: 0.24, draw: 0.31, away: 0.45, confidence: 0.58, over: 0.62, bothScore: 0.71)
+            .Build();
+
+        // Act
+        var result = await controller.Get(5);
+
+        // Assert
+        Assert.Equal(
+            (0.24, 0.31, 0.45),
+            Assert.Single(Ok(result).Fixtures).Outcome switch
+            {
+                { } o => (o.HomeWin, o.Draw, o.AwayWin),
+                null => (0d, 0d, 0d),
+            });
+    }
+
+    [Fact]
+    public async Task Jevs_confidence_in_the_outcome_is_reported()
+    {
+        // Arrange
+        var controller = GivenAGameweek.With("Everton", "Ipswich Town", 14, (2, 1, 0.31))
+            .Forecasting(home: 0.24, draw: 0.31, away: 0.45, confidence: 0.58, over: 0.62, bothScore: 0.71)
+            .Build();
+
+        // Act
+        var result = await controller.Get(5);
+
+        // Assert
+        Assert.Equal(0.58, Assert.Single(Ok(result).Fixtures).Outcome!.Confidence);
+    }
+
+    [Fact]
+    public async Task The_chance_of_three_or_more_goals_is_reported()
+    {
+        // Arrange
+        var controller = GivenAGameweek.With("Everton", "Ipswich Town", 14, (2, 1, 0.31))
+            .Forecasting(home: 0.24, draw: 0.31, away: 0.45, confidence: 0.58, over: 0.62, bothScore: 0.71)
+            .Build();
+
+        // Act
+        var result = await controller.Get(5);
+
+        // Assert
+        Assert.Equal(0.62, Assert.Single(Ok(result).Fixtures).OverTwoAndAHalfGoals);
+    }
+
+    [Fact]
+    public async Task The_chance_of_both_clubs_scoring_is_reported()
+    {
+        // Arrange
+        var controller = GivenAGameweek.With("Everton", "Ipswich Town", 14, (2, 1, 0.31))
+            .Forecasting(home: 0.24, draw: 0.31, away: 0.45, confidence: 0.58, over: 0.62, bothScore: 0.71)
+            .Build();
+
+        // Act
+        var result = await controller.Get(5);
+
+        // Assert
+        Assert.Equal(0.71, Assert.Single(Ok(result).Fixtures).BothTeamsToScore);
+    }
+
+    [Fact]
+    public async Task A_fixture_Jev_gave_no_outcome_for_is_reported_without_one()
+    {
+        // Arrange
+        var controller = GivenAGameweek.With("Everton", "Ipswich Town", 14, (2, 1, 0.31)).Build();
+
+        // Act
+        var result = await controller.Get(5);
+
+        // Assert
+        Assert.Null(Assert.Single(Ok(result).Fixtures).Outcome);
+    }
+
+    [Fact]
     public async Task A_gameweek_with_no_fixtures_is_not_found()
     {
         // Arrange
