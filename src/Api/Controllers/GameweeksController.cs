@@ -2,11 +2,13 @@ namespace Api.Controllers;
 
 using Api.Models;
 using Domain.Predicting;
+using External.Jev;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("gameweeks")]
-public sealed class GameweeksController(IGameweekPredictor predictor) : ControllerBase
+public sealed class GameweeksController(IGameweekPredictor predictor, IStateSettings? state = null)
+    : ControllerBase
 {
     /// <summary>Returns the most likely score for every fixture in the given gameweek.</summary>
     [HttpGet("{gameweek:int}")]
@@ -27,6 +29,6 @@ public sealed class GameweeksController(IGameweekPredictor predictor) : Controll
             });
         }
 
-        return Ok(predictions.ToResponse(gameweek));
+        return Ok(predictions.ToResponse(gameweek, StateSettings.Describe(state ?? StateSettings.All)));
     }
 }

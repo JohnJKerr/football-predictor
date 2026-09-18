@@ -16,9 +16,13 @@ public sealed class JevPredictor(
     HttpClient httpClient,
     IJevSettings settings,
     IRelevantHistory history,
-    ILeagueContext league)
+    ILeagueContext league,
+    IStateSettings? state = null)
     : IJevPredictor
 {
+    // TEMPORARY: null means everything on, which is what every caller but the experiment wants.
+    private readonly IStateSettings state = state ?? StateSettings.All;
+
     private const string ScorelineKey = "scoreline";
     private const string OutcomeKey = "outcome";
     private const string OverGoalsKey = "over_two_and_a_half_goals";
@@ -28,24 +32,45 @@ public sealed class JevPredictor(
     /// <summary>Jev accepts at most 32 KB of context per request.</summary>
     public const int MaxRequestBytes = 32 * 1024;
 
-    private const string Preamble =
-        "This is an upcoming Premier League fixture. Use the recent results in `history`, the " +
-        "fixture in `fixture`, and the long-run record in `league`. The league's own rates " +
-        "over the last three seasons are in `league.base_rates`; unless this fixture gives " +
-        "reason to differ, your answer should be consistent with them. ";
-
-    private const string ScorelineInstructions = Preamble +
+    private const string ScorelineQuestion =
         "What is the likely full-time score? Options are written as home goals to away goals, " +
         "so \"2-1\" means the home team wins by two goals to one.";
 
-    private const string OutcomeInstructions = Preamble +
-        "Which way is this match likely to go?";
+    private const string OutcomeQuestion = "Which way is this match likely to go?";
 
-    private const string OverGoalsInstructions = Preamble +
-        "Will this match finish with three or more goals in total?";
+    private const string OverGoalsQuestion = "Will this match finish with three or more goals in total?";
 
-    private const string BothScoreInstructions = Preamble +
-        "Will both clubs score at least once?";
+    private const string BothScoreQuestion = "Will both clubs score at least once?";
+
+    /// <summary>
+    /// Names only the parts of the state actually sent. Pointing Jev at a block that is not
+    /// there would have the experiment measuring confusion rather than the block's absence.
+    /// </summary>
+    private string Preamble
+    {
+        get
+        {
+            var sources = new List<string> { "the fixture in `fixture`" };
+
+            if (state.IncludeRecentForm) sources.Insert(0, "the recent results in `history`");
+            if (state.IncludeBaseRates || state.IncludeClubRecords || state.IncludeHeadToHead)
+            {
+                sources.Add("the long-run record in `league`");
+            }
+
+            var preamble = $"This is an upcoming Premier League fixture. Use {string.Join(", ", sources)}. ";
+
+            if (state.IncludeBaseRates)
+            {
+                preamble +=
+                    "The league's own rates over the last three seasons are in " +
+                    "`league.base_rates`; unless this fixture gives reason to differ, your " +
+                    "answer should be consistent with them. ";
+            }
+
+            return preamble;
+        }
+    }
 
     public async Task<MatchForecast> PredictAsync(
         Fixture fixture, CancellationToken cancellationToken = default)
@@ -113,7 +138,7 @@ public sealed class JevPredictor(
                 ["kickoff_utc"] = fixture.KickoffUtc.ToString("u"),
                 ["gameweek"] = fixture.Gameweek,
             },
-            ["history"] = new JsonArray([.. relevant.Select(ToJson)]),
+            ["history"] = new JsonArray([.. (state.IncludeRecentForm ? relevant : []).Select(ToJson)]),
             // Summarised rather than sent: three completed seasons are 120 KB of results.
             ["league"] = ToJson(context),
         },
@@ -124,21 +149,21 @@ public sealed class JevPredictor(
             [ScorelineKey] = new JsonObject
             {
                 ["type"] = "choice",
-                ["instructions"] = ScorelineInstructions,
+                ["instructions"] = Preamble + ScorelineQuestion,
                 ["criteria"] = BuildScorelineCriteria(),
             },
             [OutcomeKey] = new JsonObject
             {
                 ["type"] = "choice",
-                ["instructions"] = OutcomeInstructions,
+                ["instructions"] = Preamble + OutcomeQuestion,
                 ["criteria"] = BuildOutcomeCriteria(fixture),
             },
             [OverGoalsKey] = Noul(
-                OverGoalsInstructions,
+                Preamble + OverGoalsQuestion,
                 whenTrue: "Three or more goals are scored in total.",
                 whenFalse: "Two or fewer goals are scored in total."),
             [BothScoreKey] = Noul(
-                BothScoreInstructions,
+                Preamble + BothScoreQuestion,
                 whenTrue: "Both clubs score at least one goal.",
                 whenFalse: "At least one club fails to score."),
         },
@@ -159,11 +184,13 @@ public sealed class JevPredictor(
         ["away_win"] = $"{fixture.AwayTeam} win away at {fixture.HomeTeam}.",
     };
 
-    private static JsonNode ToJson(LeagueContext context)
+    private JsonNode ToJson(LeagueContext context)
     {
-        var node = new JsonObject
+        var node = new JsonObject();
+
+        if (state.IncludeBaseRates)
         {
-            ["base_rates"] = new JsonObject
+            node["base_rates"] = new JsonObject
             {
                 ["matches"] = context.BaseRates.Matches,
                 ["home_win"] = context.BaseRates.HomeWin,
@@ -172,14 +199,18 @@ public sealed class JevPredictor(
                 ["goals_per_match"] = context.BaseRates.GoalsPerMatch,
                 ["over_two_and_a_half_goals"] = context.BaseRates.OverTwoAndAHalfGoals,
                 ["both_teams_to_score"] = context.BaseRates.BothTeamsToScore,
-            },
-        };
+            };
+        }
 
-        // A club promoted into the league has no record; omit rather than send zeroes,
-        // which would read as a club that played and never won.
-        if (context.HomeClubAtHome is { } home) node["home_club_at_home"] = ToJson(home);
-        if (context.AwayClubAwayFromHome is { } away) node["away_club_away_from_home"] = ToJson(away);
-        if (context.PreviousMeetings is { } met)
+        if (state.IncludeClubRecords)
+        {
+            // A club promoted into the league has no record; omit rather than send zeroes,
+            // which would read as a club that played and never won.
+            if (context.HomeClubAtHome is { } home) node["home_club_at_home"] = ToJson(home);
+            if (context.AwayClubAwayFromHome is { } away) node["away_club_away_from_home"] = ToJson(away);
+        }
+
+        if (state.IncludeHeadToHead && context.PreviousMeetings is { } met)
         {
             node["previous_meetings"] = new JsonObject
             {

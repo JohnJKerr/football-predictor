@@ -1,6 +1,10 @@
 namespace Api.Models;
 
-public sealed record GameweekResponse(int Gameweek, IReadOnlyList<FixturePredictionResponse> Fixtures);
+public sealed record GameweekResponse(
+    int Gameweek,
+    IReadOnlyList<FixturePredictionResponse> Fixtures,
+    /// <summary>TEMPORARY: which parts of the state Jev was given, so runs can be told apart.</summary>
+    IReadOnlyList<string>? State = null);
 
 public sealed record FixturePredictionResponse(
     string FixtureId,

@@ -15,6 +15,10 @@ public static class ServiceCollectionExtensions
         services.Configure<JevSettings>(configuration.GetSection(JevSettings.SectionName));
         services.AddSingleton<IJevSettings>(sp => sp.GetRequiredService<IOptions<JevSettings>>().Value);
 
+        // TEMPORARY: lets a gameweek be run with parts of the state withheld.
+        services.Configure<StateSettings>(configuration.GetSection(StateSettings.SectionName));
+        services.AddSingleton<IStateSettings>(sp => sp.GetRequiredService<IOptions<StateSettings>>().Value);
+
         var data = new DataFileOptions();
         configuration.GetSection(DataFileOptions.SectionName).Bind(data);
 
