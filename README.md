@@ -53,6 +53,18 @@ single pair of clubs are 26 KB with no room to grow. Two things bring that down 
 2. **Only the two clubs involved.** `Domain/History/RelevantHistory` selects matches played
    by either side, most recent first, capped at six per club.
 
+### Backtesting, and not cheating at it
+
+`RelevantHistory` only returns matches that kicked off **before** the fixture being predicted.
+This matters because the results dataset holds completed matches: run the predictor over a
+round that has already been played and, without the cutoff, the fixture appears in its own
+history and Jev reads the answer straight off the state. That looks like a working model — an
+early backtest over gameweeks 2-4 scored 28/30 exact scorelines, which is not possible — so
+the failure is silent unless you check.
+
+`WhenPredictingAFixtureAlreadyPlayed` guards this against the real season. Treat any
+exact-score accuracy much above ~15% as a leak, not a result.
+
 `JevPredictor.MaxRequestBytes` is a transport backstop: if a request would still exceed 32 KB
 it sheds the oldest matches until it fits, so a long season cannot silently produce a
 rejected request.

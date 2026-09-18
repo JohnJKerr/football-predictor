@@ -3,9 +3,14 @@ namespace Domain.History;
 using Domain.Model;
 
 /// <summary>
-/// Narrows the season to the matches bearing on one fixture: those played by either club,
-/// most recent first. Jev caps its context, and the full season does not fit, so relevance
-/// is decided here rather than by truncating arbitrarily at the wire.
+/// Narrows the season to the matches bearing on one fixture: those played by either club
+/// <em>before it kicked off</em>, most recent first. Jev caps its context, and the full
+/// season does not fit, so relevance is decided here rather than truncating at the wire.
+/// <para>
+/// The kickoff cutoff is what keeps a prediction honest. The results dataset holds completed
+/// matches, so predicting a fixture that has already been played would otherwise hand Jev
+/// the very result it is being asked for, and it will read it straight off the state.
+/// </para>
 /// </summary>
 public sealed class RelevantHistory(IMatchHistory history, int maxMatchesPerClub = RelevantHistory.DefaultMaxMatchesPerClub)
     : IRelevantHistory
@@ -23,7 +28,7 @@ public sealed class RelevantHistory(IMatchHistory history, int maxMatchesPerClub
         foreach (var club in new[] { fixture.HomeTeam, fixture.AwayTeam })
         {
             selected.AddRange(completed
-                .Where(m => m.Involves(club))
+                .Where(m => m.Involves(club) && m.KickoffUtc < fixture.KickoffUtc)
                 .OrderByDescending(m => m.KickoffUtc)
                 .Take(maxMatchesPerClub));
         }
