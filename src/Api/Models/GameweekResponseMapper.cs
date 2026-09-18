@@ -27,12 +27,12 @@ internal static class GameweekResponseMapper
             prediction.Fixture.KickoffUtc,
             prediction.Fixture.HomeTeam,
             prediction.Fixture.AwayTeam,
-            [.. shown.Select(s => new ScoreResponse(s.HomeScore, s.AwayScore, s.Confidence))],
-            // Everything Jev did not put on a shown scoreline, the catch-all bucket included.
-            Math.Round(Math.Max(0, 1 - shown.Sum(s => s.Confidence)), 4),
             ToResponse(prediction.Prediction.Outcome),
             prediction.Prediction.OverTwoAndAHalfGoals,
-            prediction.Prediction.BothTeamsToScore);
+            prediction.Prediction.BothTeamsToScore,
+            [.. shown.Select(s => new ScoreResponse(s.HomeScore, s.AwayScore, s.Confidence))],
+            // Everything Jev did not put on a shown scoreline, the catch-all bucket included.
+            Math.Round(Math.Max(0, 1 - shown.Sum(s => s.Confidence)), 4));
     }
 
     private static OutcomeResponse? ToResponse(OutcomeProbabilities outcome) =>

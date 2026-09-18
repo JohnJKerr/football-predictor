@@ -156,23 +156,23 @@ curl http://localhost:5270/gameweeks/5
   "gameweek": 5,
   "fixtures": [
     {
-      "fixtureId": "espn:401879275",
-      "kickoffUtc": "2026-09-18T19:00:00+00:00",
-      "homeTeam": "Brentford",
-      "awayTeam": "Chelsea",
+      "fixtureId": "espn:401879269",
+      "kickoffUtc": "2026-09-19T11:30:00+00:00",
+      "homeTeam": "Tottenham Hotspur",
+      "awayTeam": "Aston Villa",
+      "outcome": {
+        "result": "Draw",
+        "homeWin": 0.10, "draw": 0.54, "awayWin": 0.36,
+        "confidence": 0.31
+      },
+      "overTwoAndAHalfGoals": 0.38,
+      "bothTeamsToScore": 0.40,
       "scorelines": [
         { "home": 1, "away": 1, "confidence": 0.26 },
         { "home": 0, "away": 0, "confidence": 0.19 },
         { "home": 1, "away": 2, "confidence": 0.15 }
       ],
-      "otherScorelines": 0.24,
-      "outcome": {
-        "result": "AwayWin",
-        "homeWin": 0.24, "draw": 0.31, "awayWin": 0.45,
-        "confidence": 0.58
-      },
-      "overTwoAndAHalfGoals": 0.62,
-      "bothTeamsToScore": 0.71
+      "otherScorelines": 0.24
     }
   ]
 }
@@ -181,7 +181,8 @@ curl http://localhost:5270/gameweeks/5
 `scorelines` is empty and `outcome` null if Jev returned neither. A gameweek outside the
 season returns 404.
 
-Candidate scorelines are reported most likely first, five by default — `?scorelines=10` for
+Fields run from the most certain judgement to the least: which way the match goes, then how
+it might finish. Candidate scorelines are reported most likely first, five by default — `?scorelines=10` for
 more. Reporting one would overstate what Jev said: the best of fifty options rarely holds
 more than a fifth of the probability, and `otherScorelines` is what the listed ones leave
 out. Showing the spread is the honest reading, and more use than a single number that is

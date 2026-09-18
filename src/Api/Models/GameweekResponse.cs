@@ -6,19 +6,24 @@ public sealed record GameweekResponse(
     /// <summary>TEMPORARY: which parts of the state Jev was given, so runs can be told apart.</summary>
     IReadOnlyList<string>? State = null);
 
+/// <summary>
+/// Reported from the most certain judgement to the least: which way the match goes, then how
+/// it might finish. The result is the answer worth acting on; the scorelines are detail
+/// underneath it, and no single one of them is likely.
+/// </summary>
 public sealed record FixturePredictionResponse(
     string FixtureId,
     DateTimeOffset KickoffUtc,
     string HomeTeam,
     string AwayTeam,
+    OutcomeResponse? Outcome,
+    double OverTwoAndAHalfGoals,
+    double BothTeamsToScore,
     /// <summary>Candidate results, most likely first. An exact scoreline is never confident,
     /// so a single one overstates what Jev actually said.</summary>
     IReadOnlyList<ScoreResponse> Scorelines,
     /// <summary>Probability left on results not listed, including scorelines beyond the grid.</summary>
-    double OtherScorelines,
-    OutcomeResponse? Outcome,
-    double OverTwoAndAHalfGoals,
-    double BothTeamsToScore);
+    double OtherScorelines);
 
 /// <summary><paramref name="Confidence"/> is Jev's probability for this exact scoreline.</summary>
 public sealed record ScoreResponse(int Home, int Away, double Confidence);
