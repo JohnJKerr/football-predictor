@@ -21,6 +21,8 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IFixtureSource>(_ => new JsonFileFixtureSource(data.FixturesPath));
         services.AddSingleton<IMatchHistory>(_ => new JsonFileMatchHistory(data.ResultsPath));
         services.AddSingleton<IRelevantHistory, RelevantHistory>();
+        services.AddSingleton<IPriorSeasons>(_ => new JsonFilePriorSeasons(data.PriorSeasonsPath));
+        services.AddSingleton<ILeagueContext, LeagueContextSource>();
 
         services.AddHttpClient<IJevPredictor, JevPredictor>(client =>
             // A gameweek issues ten of these at once and Jev is doing real work on each.
@@ -42,4 +44,7 @@ public sealed class DataFileOptions
     public string FixturesPath { get; set; } = Path.Combine(AppContext.BaseDirectory, "data", "fixtures.json");
 
     public string ResultsPath { get; set; } = Path.Combine(AppContext.BaseDirectory, "data", "results.json");
+
+    public string PriorSeasonsPath { get; set; } =
+        Path.Combine(AppContext.BaseDirectory, "data", "prior-seasons.json");
 }

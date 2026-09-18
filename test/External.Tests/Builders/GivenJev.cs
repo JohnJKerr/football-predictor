@@ -3,6 +3,7 @@ namespace External.Tests.Builders;
 using System.Net;
 using Domain.History;
 using Domain.Model;
+using Domain.Model;
 using Domain.Predicting;
 using External.Jev;
 
@@ -12,6 +13,7 @@ internal sealed class GivenJev
     private string reply = JevReplies.AnyValid;
     private CompletedMatch[] history = [];
     private HttpStatusCode? failure;
+    private LeagueContext league = new(LeagueBaseRates.None, null, null, null);
     private IJevSettings settings = new TestJevSettings();
 
     public static GivenJev Asked() => new();
@@ -29,6 +31,14 @@ internal sealed class GivenJev
         return this;
     }
 
+    public GivenJev AndLeague(LeagueContext context)
+    {
+        league = context;
+        return this;
+    }
+
+    public static GivenJev WithLeague(LeagueContext context) => new() { league = context };
+
     public JevUnderTest Build()
     {
         HttpMessageHandler handler = failure is { } status
@@ -36,7 +46,9 @@ internal sealed class GivenJev
             : new RecordingHandler(reply);
 
         return new JevUnderTest(
-            new JevPredictor(new HttpClient(handler), settings, new StubRelevantHistory(history)),
+            new JevPredictor(
+                new HttpClient(handler), settings,
+                new StubRelevantHistory(history), new StubLeagueContext(league)),
             handler as RecordingHandler,
             history);
     }
@@ -69,6 +81,12 @@ internal sealed class GivenJev
         }
     }
 
+    private sealed class StubLeagueContext(LeagueContext context) : ILeagueContext
+    {
+        public Task<LeagueContext> ForAsync(Fixture fixture, CancellationToken cancellationToken = default)
+            => Task.FromResult(context);
+    }
+
     /// <summary>Exposes what the predictor sent, so assertions can read one thing each.</summary>
     internal sealed class JevUnderTest(
         JevPredictor predictor, RecordingHandler? handler, IReadOnlyList<CompletedMatch> given)
@@ -93,6 +111,8 @@ internal sealed class GivenJev
         public System.Text.Json.Nodes.JsonNode Fixture => Body["state"]!["fixture"]!;
 
         public System.Text.Json.Nodes.JsonArray History => Body["state"]!["history"]!.AsArray();
+
+        public System.Text.Json.Nodes.JsonNode League => Body["state"]!["league"]!;
 
         public long RequestBytes => Request.Content!.Headers.ContentLength!.Value;
     }

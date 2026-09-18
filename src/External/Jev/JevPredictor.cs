@@ -12,7 +12,11 @@ using Domain.Predicting;
 /// A single <c>choice</c> question is used so Jev reports the likelihood of an exact
 /// result directly, rather than us inferring it from two independent goal distributions.
 /// </summary>
-public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, IRelevantHistory history)
+public sealed class JevPredictor(
+    HttpClient httpClient,
+    IJevSettings settings,
+    IRelevantHistory history,
+    ILeagueContext league)
     : IJevPredictor
 {
     private const string ScorelineKey = "scoreline";
@@ -25,8 +29,10 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
     public const int MaxRequestBytes = 32 * 1024;
 
     private const string Preamble =
-        "This is an upcoming Premier League fixture. Use the recent results in `history` and " +
-        "the fixture in `fixture`. ";
+        "This is an upcoming Premier League fixture. Use the recent results in `history`, the " +
+        "fixture in `fixture`, and the long-run record in `league`. The league's own rates " +
+        "over the last three seasons are in `league.base_rates`; unless this fixture gives " +
+        "reason to differ, your answer should be consistent with them. ";
 
     private const string ScorelineInstructions = Preamble +
         "What is the likely full-time score? Options are written as home goals to away goals, " +
@@ -45,7 +51,8 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
         Fixture fixture, CancellationToken cancellationToken = default)
     {
         var relevant = await history.ForAsync(fixture, cancellationToken);
-        var payload = BuildPayloadWithinBudget(fixture, relevant);
+        var context = await league.ForAsync(fixture, cancellationToken);
+        var payload = BuildPayloadWithinBudget(fixture, relevant, context);
 
         using var content = new ByteArrayContent(payload);
         content.Headers.ContentType = new MediaTypeHeaderValue("application/json") { CharSet = "utf-8" };
@@ -72,14 +79,15 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
     /// <see cref="RelevantHistory"/> has already narrowed this to the two clubs; this is the
     /// transport's own backstop, so a long season cannot silently produce a rejected request.
     /// </summary>
-    private byte[] BuildPayloadWithinBudget(Fixture fixture, IReadOnlyList<CompletedMatch> relevant)
+    private byte[] BuildPayloadWithinBudget(
+        Fixture fixture, IReadOnlyList<CompletedMatch> relevant, LeagueContext context)
     {
         // Most recent first, so trimming from the end sheds the least useful history.
         var considered = relevant.OrderByDescending(m => m.KickoffUtc).ToList();
 
         while (true)
         {
-            var payload = JsonSerializer.SerializeToUtf8Bytes(BuildBody(fixture, considered));
+            var payload = JsonSerializer.SerializeToUtf8Bytes(BuildBody(fixture, considered, context));
 
             if (payload.Length <= MaxRequestBytes || considered.Count == 0) return payload;
 
@@ -92,7 +100,8 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
         }
     }
 
-    private JsonObject BuildBody(Fixture fixture, IReadOnlyList<CompletedMatch> relevant) => new()
+    private JsonObject BuildBody(
+        Fixture fixture, IReadOnlyList<CompletedMatch> relevant, LeagueContext context) => new()
     {
         ["model"] = settings.Model,
         ["state"] = new JsonObject
@@ -105,6 +114,8 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
                 ["gameweek"] = fixture.Gameweek,
             },
             ["history"] = new JsonArray([.. relevant.Select(ToJson)]),
+            // Summarised rather than sent: three completed seasons are 120 KB of results.
+            ["league"] = ToJson(context),
         },
         // Questions run in parallel inside one request, so the narrower ones cost no
         // extra round trip and share the state we already paid to send.
@@ -146,6 +157,51 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
         ["home_win"] = $"{fixture.HomeTeam} win at home against {fixture.AwayTeam}.",
         ["draw"] = $"{fixture.HomeTeam} and {fixture.AwayTeam} finish level.",
         ["away_win"] = $"{fixture.AwayTeam} win away at {fixture.HomeTeam}.",
+    };
+
+    private static JsonNode ToJson(LeagueContext context)
+    {
+        var node = new JsonObject
+        {
+            ["base_rates"] = new JsonObject
+            {
+                ["matches"] = context.BaseRates.Matches,
+                ["home_win"] = context.BaseRates.HomeWin,
+                ["draw"] = context.BaseRates.Draw,
+                ["away_win"] = context.BaseRates.AwayWin,
+                ["goals_per_match"] = context.BaseRates.GoalsPerMatch,
+                ["over_two_and_a_half_goals"] = context.BaseRates.OverTwoAndAHalfGoals,
+                ["both_teams_to_score"] = context.BaseRates.BothTeamsToScore,
+            },
+        };
+
+        // A club promoted into the league has no record; omit rather than send zeroes,
+        // which would read as a club that played and never won.
+        if (context.HomeClubAtHome is { } home) node["home_club_at_home"] = ToJson(home);
+        if (context.AwayClubAwayFromHome is { } away) node["away_club_away_from_home"] = ToJson(away);
+        if (context.PreviousMeetings is { } met)
+        {
+            node["previous_meetings"] = new JsonObject
+            {
+                ["played"] = met.Played,
+                ["won"] = met.Won,
+                ["drawn"] = met.Drawn,
+                ["lost"] = met.Lost,
+            };
+        }
+
+        return node;
+    }
+
+    private static JsonNode ToJson(ClubRecord record) => new JsonObject
+    {
+        ["club"] = record.Club,
+        ["played"] = record.Played,
+        ["won"] = record.Won,
+        ["drawn"] = record.Drawn,
+        ["lost"] = record.Lost,
+        ["goals_for"] = record.GoalsFor,
+        ["goals_against"] = record.GoalsAgainst,
     };
 
     private static JsonNode ToJson(CompletedMatch match) => new JsonObject
