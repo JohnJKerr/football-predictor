@@ -193,16 +193,31 @@ public sealed class JevPredictor(
         return node;
     }
 
-    private static JsonNode ToJson(ClubRecord record) => new JsonObject
+    private static JsonNode ToJson(ClubRecord record)
     {
-        ["club"] = record.Club,
-        ["played"] = record.Played,
-        ["won"] = record.Won,
-        ["drawn"] = record.Drawn,
-        ["lost"] = record.Lost,
-        ["goals_for"] = record.GoalsFor,
-        ["goals_against"] = record.GoalsAgainst,
-    };
+        var node = new JsonObject
+        {
+            ["club"] = record.Club,
+            ["basis"] = record.Basis == RecordBasis.OwnRecord ? "own_record" : "promoted_sides",
+            ["played"] = record.Played,
+            ["won"] = record.Won,
+            ["drawn"] = record.Drawn,
+            ["lost"] = record.Lost,
+            ["goals_for"] = record.GoalsFor,
+            ["goals_against"] = record.GoalsAgainst,
+        };
+
+        if (record.Basis == RecordBasis.PromotedSides)
+        {
+            // Said in words as well as in the field: these are not this club's own figures,
+            // and read as if they were they would badly overstate its experience.
+            node["note"] =
+                $"{record.Club} have no record in these seasons, having just come up. These " +
+                "are the combined figures for clubs in the season they were promoted.";
+        }
+
+        return node;
+    }
 
     private static JsonNode ToJson(CompletedMatch match) => new JsonObject
     {
