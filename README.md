@@ -72,8 +72,26 @@ seasons:
 
 Alongside the rates go the home club's record *at home*, the away club's record *away*, and
 the two clubs' previous meetings. Venue is kept separate because that is where most of the
-signal is. A club promoted into the league sends no record at all rather than zeroes, which
-would read as a club that played and never won.
+signal is.
+
+#### Clubs with no record
+
+Hull City and Coventry City came up into 2026-27 and appear nowhere in the completed seasons,
+which left a hole exactly where a fixture is hardest to call. They stand in for the class they
+belong to: the clubs that appear in a season but not the one before it. Across three seasons
+that is six promotions — Burnley, Ipswich Town, Leeds United, Leicester City, Southampton and
+Sunderland — in the season each came up:
+
+| | Promoted sides | League |
+| --- | --- | --- |
+| Win at home | 22.8% | 43.2% |
+| Win away | 13.2% | 32.4% |
+| Conceded at home | 1.71/game | — |
+| Conceded away | 2.04/game | — |
+
+A borrowed record carries `"basis": "promoted_sides"` and says so in words, because read as
+the club's own it would badly overstate a newcomer's experience. Only the record is borrowed:
+previous meetings that never happened are not invented.
 
 Those three seasons are 120 KB of results, so what travels is the summary, not the matches.
 `WhenMeasuringTheRealLeaguesBaseRates` pins the rates against the real file.
@@ -161,6 +179,8 @@ Suites are grouped by behaviour, one class per context:
 | `WhenSelectingRelevantHistory` | Which matches are worth sending to Jev. |
 | `WhenMeasuringLeagueBaseRates` / `WhenBuildingTheLeagueContextForAFixture` | The long-run rates and each club's record. |
 | `WhenSendingTheLeagueContextToJev` | That the anchor reaches the request. |
+| `WhenIdentifyingPromotedSides` / `WhenProfilingAPromotedSide` | The reference class for a club with no record. |
+| `WhenAClubHasNoRecordOfItsOwn` / `WhenARealPromotedClubIsInTheFixture` | Standing a newcomer in for it. |
 | `WhenAskingJevForAScoreline` | The request shape: endpoint, auth, question, options. |
 | `WhenBuildingTheStateSentToJev` | What goes in `state`, and the 32 KB budget. |
 | `WhenReadingJevsAnswer` | Parsing probabilities; failures surfacing. |
