@@ -20,21 +20,38 @@ public interface IStateSettings
     bool IncludeRecentForm { get; }
 }
 
-/// <summary>TEMPORARY. Bound from the "State" configuration section; everything on by default.</summary>
+/// <summary>
+/// TEMPORARY. Bound from the "State" configuration section.
+/// <para>
+/// Defaults are this season's form only. Running gameweeks 2-4 through every combination
+/// scored form alone best on Brier (0.774) and everything-on markedly worse (0.840); the
+/// league blocks each made it worse still, base rates worst of all at 1.318. See the
+/// experiment note in README.
+/// </para>
+/// </summary>
 public sealed class StateSettings : IStateSettings
 {
     public const string SectionName = "State";
 
-    public bool IncludeBaseRates { get; set; } = true;
+    public bool IncludeBaseRates { get; set; }
 
-    public bool IncludeClubRecords { get; set; } = true;
+    public bool IncludeClubRecords { get; set; }
 
-    public bool IncludeHeadToHead { get; set; } = true;
+    public bool IncludeHeadToHead { get; set; }
 
     public bool IncludeRecentForm { get; set; } = true;
 
-    /// <summary>Everything on: what the predictor assumes when no settings are supplied.</summary>
-    public static IStateSettings All { get; } = new StateSettings();
+    /// <summary>What the predictor assumes when no settings are supplied.</summary>
+    public static IStateSettings Default { get; } = new StateSettings();
+
+    /// <summary>Everything on, for exercising the parts that are no longer sent by default.</summary>
+    public static IStateSettings Everything { get; } = new StateSettings
+    {
+        IncludeBaseRates = true,
+        IncludeClubRecords = true,
+        IncludeHeadToHead = true,
+        IncludeRecentForm = true,
+    };
 
     /// <summary>Names of the parts in play, so a captured response says how it was produced.</summary>
     public static IReadOnlyList<string> Describe(IStateSettings settings)

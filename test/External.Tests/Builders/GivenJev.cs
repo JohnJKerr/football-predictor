@@ -13,6 +13,7 @@ internal sealed class GivenJev
     private CompletedMatch[] history = [];
     private HttpStatusCode? failure;
     private LeagueContext league = new(LeagueBaseRates.None, null, null, null);
+    private IStateSettings state = StateSettings.Everything;
     private IJevSettings settings = new TestJevSettings();
 
     public static GivenJev Asked() => new();
@@ -47,7 +48,7 @@ internal sealed class GivenJev
         return new JevUnderTest(
             new JevPredictor(
                 new HttpClient(handler), settings,
-                new StubRelevantHistory(history), new StubLeagueContext(league)),
+                new StubRelevantHistory(history), new StubLeagueContext(league), state),
             handler as RecordingHandler,
             history);
     }

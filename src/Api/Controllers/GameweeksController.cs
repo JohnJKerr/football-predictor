@@ -29,6 +29,6 @@ public sealed class GameweeksController(IGameweekPredictor predictor, IStateSett
             });
         }
 
-        return Ok(predictions.ToResponse(gameweek, StateSettings.Describe(state ?? StateSettings.All)));
+        return Ok(predictions.ToResponse(gameweek, StateSettings.Describe(state ?? StateSettings.Default)));
     }
 }

@@ -54,6 +54,19 @@ scorelines but 53% on the outcome alone.
 state sent to Jev, fixtures provide the schedule. `data/prior-seasons.json` holds the last
 three completed seasons.
 
+### The league context is built, but not sent
+
+Everything below is computed and tested, and switched **off** by default. Running gameweeks
+2-4 through every combination of state showed this season's form alone scoring best, and the
+prior-season blocks making predictions worse — base rates worst of all, inverting into 88%
+home-win confidence when told the league runs 43%. See [EXPERIMENTS.md](EXPERIMENTS.md).
+
+Re-enable any part with a flag:
+
+```bash
+State__IncludeBaseRates=true dotnet run --project src/Api
+```
+
 ### Anchoring Jev to the league
 
 Jev has no way to know how the Premier League behaves in aggregate, and backtesting showed
@@ -189,7 +202,17 @@ Suites are grouped by behaviour, one class per context:
 | `WhenRequestingAGameweek` | Controller logic in isolation. |
 | `WhenCallingTheGameweekEndpoint` | In-process host against **the real Jev**; skips itself when no `Jev:ApiKey` is configured. |
 
+## What we have measured
+
+[EXPERIMENTS.md](EXPERIMENTS.md) records what has been tested against real results: the
+leakage that made an early backtest score 28/30, why an exact scoreline cannot be confident,
+and why the prior-season context is built but switched off.
+
 ## Known rough edges
 
 - Fixtures are predicted one at a time. There is no retry or backoff if Jev rate-limits (429).
+- No configuration yet beats assigning a flat third to each outcome. Draws are under-predicted
+  at 19% against the league's 24.5%.
+- `State` configuration and `scripts/state-experiment.sh` are temporary scaffolding for the
+  above, and should go once the question is settled.
 - A Jev failure surfaces as a 500 with no detail.

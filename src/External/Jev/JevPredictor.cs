@@ -20,8 +20,8 @@ public sealed class JevPredictor(
     IStateSettings? state = null)
     : IJevPredictor
 {
-    // TEMPORARY: null means everything on, which is what every caller but the experiment wants.
-    private readonly IStateSettings state = state ?? StateSettings.All;
+    // TEMPORARY: null means the measured-best default, this season's form alone.
+    private readonly IStateSettings state = state ?? StateSettings.Default;
 
     private const string ScorelineKey = "scoreline";
     private const string OutcomeKey = "outcome";
