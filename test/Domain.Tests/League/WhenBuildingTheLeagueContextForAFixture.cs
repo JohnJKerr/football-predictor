@@ -93,10 +93,10 @@ public class WhenBuildingTheLeagueContextForAFixture
     }
 
     [Fact]
-    public async Task A_newly_promoted_club_has_no_record_to_report()
+    public async Task A_club_with_neither_a_record_nor_a_reference_class_reports_nothing()
     {
         // Arrange
-        // Neither club has played in the league before.
+        // One season only, so no promotions can be identified to fall back on.
         var source = Given(APriorResult.Of("Everton", 1, 0, "Arsenal"));
 
         // Act

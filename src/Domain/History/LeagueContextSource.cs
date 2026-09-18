@@ -9,10 +9,15 @@ public sealed class LeagueContextSource(IPriorSeasons seasons) : ILeagueContext
     {
         var results = await seasons.GetAsync(cancellationToken);
 
+        // A club promoted into the league has no record of its own, so it stands in for the
+        // class it belongs to. Only the record is borrowed: meetings that never happened are
+        // not invented.
+        var promoted = PromotedSideProfile.From(results);
+
         return new LeagueContext(
             LeagueBaseRates.From(results),
-            AtHome(results, fixture.HomeTeam),
-            AwayFromHome(results, fixture.AwayTeam),
+            AtHome(results, fixture.HomeTeam) ?? StandIn(promoted?.AtHome, fixture.HomeTeam),
+            AwayFromHome(results, fixture.AwayTeam) ?? StandIn(promoted?.AwayFromHome, fixture.AwayTeam),
             Meetings(results, fixture.HomeTeam, fixture.AwayTeam));
     }
 
@@ -64,6 +69,10 @@ public sealed class LeagueContextSource(IPriorSeasons seasons) : ILeagueContext
 
         return new HeadToHead(met.Count, won, drawn, met.Count - won - drawn);
     }
+
+    /// <summary>Keeps the club's own name, so the record says who it is about as well as where it came from.</summary>
+    private static ClubRecord? StandIn(ClubRecord? reference, string club) =>
+        reference is null ? null : reference with { Club = club };
 
     private static bool Same(string a, string b) => string.Equals(a, b, StringComparison.OrdinalIgnoreCase);
 }
