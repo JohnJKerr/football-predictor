@@ -11,9 +11,13 @@ internal sealed class GivenAFile
 
     public static GivenAFile WithResults() => new() { path = Path.Combine(Root, "results.json") };
 
+    public static GivenAFile WithPriorSeasons() => new() { path = Path.Combine(Root, "prior-seasons.json") };
+
     public JsonFileFixtureSource BuildFixtureSource() => new(path!);
 
     public JsonFileMatchHistory BuildMatchHistory() => new(path!);
+
+    public JsonFilePriorSeasons BuildPriorSeasons() => new(path!);
 
     private static string Root
     {
