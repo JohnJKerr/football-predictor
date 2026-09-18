@@ -50,8 +50,33 @@ scorelines but 53% on the outcome alone.
 | `src/External` | `JevPredictor` (the only class that speaks Jev's wire format) and the dataset readers. |
 | `src/Api` | `GET /gameweeks/{gw}`. |
 
-`data/fixtures.json` and `data/results.json` are the season datasets; results become the
-state sent to Jev, fixtures provide the schedule.
+`data/fixtures.json` and `data/results.json` are this season's datasets; results become the
+state sent to Jev, fixtures provide the schedule. `data/prior-seasons.json` holds the last
+three completed seasons.
+
+### Anchoring Jev to the league
+
+Jev has no way to know how the Premier League behaves in aggregate, and backtesting showed
+it: 43% of its probability went on away wins where the league runs 32%, and draws were
+under-weighted. So every request carries a `league` block derived from the three completed
+seasons:
+
+| | Last 3 seasons |
+| --- | --- |
+| Home win | 43.2% |
+| Draw | 24.5% |
+| Away win | 32.4% |
+| Goals per match | 2.99 |
+| Over 2.5 goals | 58.8% |
+| Both teams to score | 58.3% |
+
+Alongside the rates go the home club's record *at home*, the away club's record *away*, and
+the two clubs' previous meetings. Venue is kept separate because that is where most of the
+signal is. A club promoted into the league sends no record at all rather than zeroes, which
+would read as a club that played and never won.
+
+Those three seasons are 120 KB of results, so what travels is the summary, not the matches.
+`WhenMeasuringTheRealLeaguesBaseRates` pins the rates against the real file.
 
 ### Fitting Jev's context limit
 
@@ -134,6 +159,8 @@ Suites are grouped by behaviour, one class per context:
 | `WhenPredictingAGameweek` | Predicting each fixture, one at a time, in kickoff order. |
 | `WhenPlacingFixturesIntoGameweeks` | Blocks of ten, kickoff order, stable ties. |
 | `WhenSelectingRelevantHistory` | Which matches are worth sending to Jev. |
+| `WhenMeasuringLeagueBaseRates` / `WhenBuildingTheLeagueContextForAFixture` | The long-run rates and each club's record. |
+| `WhenSendingTheLeagueContextToJev` | That the anchor reaches the request. |
 | `WhenAskingJevForAScoreline` | The request shape: endpoint, auth, question, options. |
 | `WhenBuildingTheStateSentToJev` | What goes in `state`, and the 32 KB budget. |
 | `WhenReadingJevsAnswer` | Parsing probabilities; failures surfacing. |
