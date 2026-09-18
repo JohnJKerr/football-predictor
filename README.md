@@ -30,6 +30,18 @@ Authorization: Bearer <key>
 Jev replies with a probability for every scoreline, so `Prediction.Confidence` is Jev's own
 probability for that exact result rather than a number we invented.
 
+### Why the scoreline is not the whole answer
+
+An exact scoreline is irreducibly uncertain. Fifty options share the probability, so the best
+of them rarely holds more than a fifth — and that is honest, not a tuning failure. The most
+common scoreline across the season's first 40 matches occurred 15% of the time.
+
+So three narrower questions are asked in the same request: the outcome (`choice`, three
+options), whether the match passes 2.5 goals (`noul`), and whether both clubs score (`noul`).
+Questions run in parallel inside one request, so these cost no extra round trip and reuse the
+state we already paid to send. A clean backtest over gameweeks 2-4 scored 20% on exact
+scorelines but 53% on the outcome alone.
+
 ## Layout
 
 | Project | Holds |
@@ -88,18 +100,25 @@ curl http://localhost:5270/gameweeks/5
   "gameweek": 5,
   "fixtures": [
     {
-      "fixtureId": "espn:401879279",
+      "fixtureId": "espn:401879275",
       "kickoffUtc": "2026-09-18T19:00:00+00:00",
       "homeTeam": "Brentford",
       "awayTeam": "Chelsea",
-      "mostLikelyScore": { "home": 1, "away": 2, "confidence": 0.23 }
+      "mostLikelyScore": { "home": 1, "away": 2, "confidence": 0.23 },
+      "outcome": {
+        "result": "AwayWin",
+        "homeWin": 0.24, "draw": 0.31, "awayWin": 0.45,
+        "confidence": 0.58
+      },
+      "overTwoAndAHalfGoals": 0.62,
+      "bothTeamsToScore": 0.71
     }
   ]
 }
 ```
 
-`mostLikelyScore` is null if Jev returns no scoreline for a fixture. A gameweek outside the
-season returns 404.
+`mostLikelyScore` and `outcome` are null if Jev returned neither for a fixture. A gameweek
+outside the season returns 404.
 
 ## Tests
 
