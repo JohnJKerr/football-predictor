@@ -17,10 +17,10 @@ public class WhenReadingJevsAnswer
         var jev = GivenJev.Replying(JevReplies.ARankedDistribution).Build();
 
         // Act
-        var result = await jev.PredictAsync(AFixture.Upcoming);
+        var forecast = await jev.PredictAsync(AFixture.Upcoming);
 
         // Assert
-        Assert.Equal(expected, result.ByScoreline[new Scoreline(home, away)]);
+        Assert.Equal(expected, forecast.Scorelines.ByScoreline[new Scoreline(home, away)]);
     }
 
     [Fact]
@@ -30,10 +30,10 @@ public class WhenReadingJevsAnswer
         var jev = GivenJev.Replying(JevReplies.ARankedDistribution).Build();
 
         // Act
-        var result = await jev.PredictAsync(AFixture.Upcoming);
+        var forecast = await jev.PredictAsync(AFixture.Upcoming);
 
         // Assert
-        Assert.Equal(0.40, result.Other);
+        Assert.Equal(0.40, forecast.Scorelines.Other);
     }
 
     [Fact]
@@ -43,10 +43,10 @@ public class WhenReadingJevsAnswer
         var jev = GivenJev.Replying(JevReplies.ARankedDistribution).Build();
 
         // Act
-        var result = await jev.PredictAsync(AFixture.Upcoming);
+        var forecast = await jev.PredictAsync(AFixture.Upcoming);
 
         // Assert
-        Assert.Equal(3, result.ByScoreline.Count);
+        Assert.Equal(3, forecast.Scorelines.ByScoreline.Count);
     }
 
     [Fact]
@@ -56,10 +56,10 @@ public class WhenReadingJevsAnswer
         var jev = GivenJev.Replying(JevReplies.ARankedDistribution).Build();
 
         // Act
-        var result = await jev.PredictAsync(AFixture.Upcoming);
+        var forecast = await jev.PredictAsync(AFixture.Upcoming);
 
         // Assert
-        Assert.Equal(0.64, result.Confidence);
+        Assert.Equal(0.64, forecast.Scorelines.Confidence);
     }
 
     [Fact]

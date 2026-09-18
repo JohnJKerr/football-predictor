@@ -27,17 +27,21 @@ internal sealed class GivenJev
         return this;
     }
 
-    public StubJevPredictor Build() => new(new ScorelineProbabilities(scorelines, other, confidence));
+    public StubJevPredictor Build() => new(new MatchForecast(
+        new ScorelineProbabilities(scorelines, other, confidence),
+        new OutcomeProbabilities(new Dictionary<Outcome, double>(), 0d),
+        OverTwoAndAHalfGoals: 0d,
+        BothTeamsToScore: 0d));
 }
 
-internal sealed class StubJevPredictor(ScorelineProbabilities probabilities) : IJevPredictor
+internal sealed class StubJevPredictor(MatchForecast forecast) : IJevPredictor
 {
     public Fixture? Asked { get; private set; }
 
-    public Task<ScorelineProbabilities> PredictAsync(
+    public Task<MatchForecast> PredictAsync(
         Fixture fixture, CancellationToken cancellationToken = default)
     {
         Asked = fixture;
-        return Task.FromResult(probabilities);
+        return Task.FromResult(forecast);
     }
 }

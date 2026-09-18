@@ -86,19 +86,6 @@ public class WhenAskingJevForAScoreline
     }
 
     [Fact]
-    public async Task A_single_question_is_asked()
-    {
-        // Arrange
-        var jev = GivenJev.Asked().Build();
-
-        // Act
-        await jev.PredictAsync(AFixture.Upcoming);
-
-        // Assert
-        Assert.Equal("scoreline", Assert.Single(jev.Body["questions"]!.AsObject()).Key);
-    }
-
-    [Fact]
     public async Task The_question_is_a_choice()
     {
         // Arrange

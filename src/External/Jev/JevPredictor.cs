@@ -15,19 +15,33 @@ using Domain.Predicting;
 public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, IRelevantHistory history)
     : IJevPredictor
 {
-    private const string QuestionKey = "scoreline";
+    private const string ScorelineKey = "scoreline";
+    private const string OutcomeKey = "outcome";
+    private const string OverGoalsKey = "over_two_and_a_half_goals";
+    private const string BothScoreKey = "both_teams_to_score";
     private const string Endpoint = "v1/systemone";
 
     /// <summary>Jev accepts at most 32 KB of context per request.</summary>
     public const int MaxRequestBytes = 32 * 1024;
 
-    private const string Instructions =
-        "This is an upcoming Premier League fixture. Using the recent results in `history`, " +
-        "and the fixture in `fixture`, what is the likely full-time score? Options are " +
-        "written as home goals to away goals, so \"2-1\" means the home team wins by two " +
-        "goals to one.";
+    private const string Preamble =
+        "This is an upcoming Premier League fixture. Use the recent results in `history` and " +
+        "the fixture in `fixture`. ";
 
-    public async Task<ScorelineProbabilities> PredictAsync(
+    private const string ScorelineInstructions = Preamble +
+        "What is the likely full-time score? Options are written as home goals to away goals, " +
+        "so \"2-1\" means the home team wins by two goals to one.";
+
+    private const string OutcomeInstructions = Preamble +
+        "Which way is this match likely to go?";
+
+    private const string OverGoalsInstructions = Preamble +
+        "Will this match finish with three or more goals in total?";
+
+    private const string BothScoreInstructions = Preamble +
+        "Will both clubs score at least once?";
+
+    public async Task<MatchForecast> PredictAsync(
         Fixture fixture, CancellationToken cancellationToken = default)
     {
         var relevant = await history.ForAsync(fixture, cancellationToken);
@@ -50,7 +64,7 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
         var body = await JsonNode.ParseAsync(stream, cancellationToken: cancellationToken)
                    ?? throw new JevException("Jev returned an empty response body.");
 
-        return ReadProbabilities(body);
+        return ReadForecast(body);
     }
 
     /// <summary>
@@ -92,15 +106,46 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
             },
             ["history"] = new JsonArray([.. relevant.Select(ToJson)]),
         },
+        // Questions run in parallel inside one request, so the narrower ones cost no
+        // extra round trip and share the state we already paid to send.
         ["questions"] = new JsonObject
         {
-            [QuestionKey] = new JsonObject
+            [ScorelineKey] = new JsonObject
             {
                 ["type"] = "choice",
-                ["instructions"] = Instructions,
-                ["criteria"] = BuildCriteria(),
+                ["instructions"] = ScorelineInstructions,
+                ["criteria"] = BuildScorelineCriteria(),
             },
+            [OutcomeKey] = new JsonObject
+            {
+                ["type"] = "choice",
+                ["instructions"] = OutcomeInstructions,
+                ["criteria"] = BuildOutcomeCriteria(fixture),
+            },
+            [OverGoalsKey] = Noul(
+                OverGoalsInstructions,
+                whenTrue: "Three or more goals are scored in total.",
+                whenFalse: "Two or fewer goals are scored in total."),
+            [BothScoreKey] = Noul(
+                BothScoreInstructions,
+                whenTrue: "Both clubs score at least one goal.",
+                whenFalse: "At least one club fails to score."),
         },
+    };
+
+    private static JsonObject Noul(string instructions, string whenTrue, string whenFalse) => new()
+    {
+        ["type"] = "noul",
+        ["instructions"] = instructions,
+        ["criteria"] = new JsonObject { ["true"] = whenTrue, ["false"] = whenFalse },
+    };
+
+    private static JsonObject BuildOutcomeCriteria(Fixture fixture) => new()
+    {
+        // Named for the clubs: "home_win" alone does not say who is at home.
+        ["home_win"] = $"{fixture.HomeTeam} win at home against {fixture.AwayTeam}.",
+        ["draw"] = $"{fixture.HomeTeam} and {fixture.AwayTeam} finish level.",
+        ["away_win"] = $"{fixture.AwayTeam} win away at {fixture.HomeTeam}.",
     };
 
     private static JsonNode ToJson(CompletedMatch match) => new JsonObject
@@ -133,7 +178,7 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
         return node;
     }
 
-    private static JsonObject BuildCriteria()
+    private static JsonObject BuildScorelineCriteria()
     {
         // Option names are self-describing, so descriptions are null per Jev's guidance.
         var criteria = new JsonObject();
@@ -146,13 +191,56 @@ public sealed class JevPredictor(HttpClient httpClient, IJevSettings settings, I
         return criteria;
     }
 
-    private static ScorelineProbabilities ReadProbabilities(JsonNode body)
+    private static MatchForecast ReadForecast(JsonNode body)
     {
-        var answer = body["answers"]?[QuestionKey]
-                     ?? throw new JevException($"Jev returned no answer for '{QuestionKey}'.");
+        var answers = body["answers"];
+
+        return new MatchForecast(
+            ReadScorelines(answers),
+            ReadOutcome(answers),
+            // A narrower question going missing must not cost us the scoreline, which is
+            // the answer the endpoint was built around.
+            ReadNoul(answers, OverGoalsKey),
+            ReadNoul(answers, BothScoreKey));
+    }
+
+    private static double ReadNoul(JsonNode? answers, string key) =>
+        answers?[key]?["noul"]?.GetValue<double>() ?? 0d;
+
+    private static OutcomeProbabilities ReadOutcome(JsonNode? answers)
+    {
+        var answer = answers?[OutcomeKey];
+        var probabilities = answer?["probabilities"]?.AsObject();
+
+        if (probabilities is null) return new OutcomeProbabilities(new Dictionary<Outcome, double>(), 0d);
+
+        var byOutcome = new Dictionary<Outcome, double>();
+
+        foreach (var (key, value) in probabilities)
+        {
+            if (OutcomeKeys.TryGetValue(key, out var outcome))
+            {
+                byOutcome[outcome] = value?.GetValue<double>() ?? 0d;
+            }
+        }
+
+        return new OutcomeProbabilities(byOutcome, answer?["confidence"]?.GetValue<double>() ?? 0d);
+    }
+
+    private static readonly Dictionary<string, Outcome> OutcomeKeys = new()
+    {
+        ["home_win"] = Outcome.HomeWin,
+        ["draw"] = Outcome.Draw,
+        ["away_win"] = Outcome.AwayWin,
+    };
+
+    private static ScorelineProbabilities ReadScorelines(JsonNode? answers)
+    {
+        var answer = answers?[ScorelineKey]
+                     ?? throw new JevException($"Jev returned no answer for '{ScorelineKey}'.");
 
         var probabilities = answer["probabilities"]?.AsObject()
-                            ?? throw new JevException($"Jev returned no probabilities for '{QuestionKey}'.");
+                            ?? throw new JevException($"Jev returned no probabilities for '{ScorelineKey}'.");
 
         var byScoreline = new Dictionary<Scoreline, double>();
         var other = 0d;

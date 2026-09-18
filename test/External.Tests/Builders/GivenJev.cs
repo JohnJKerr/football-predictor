@@ -75,14 +75,18 @@ internal sealed class GivenJev
     {
         public IReadOnlyList<CompletedMatch> GivenHistory => given;
 
-        public Task<ScorelineProbabilities> PredictAsync(Fixture fixture)
+        public Task<MatchForecast> PredictAsync(Fixture fixture)
             => predictor.PredictAsync(fixture);
 
         public HttpRequestMessage Request => handler!.Request!;
 
         public System.Text.Json.Nodes.JsonNode Body => handler!.Body;
 
-        public System.Text.Json.Nodes.JsonNode Question => Body["questions"]!["scoreline"]!;
+        public System.Text.Json.Nodes.JsonObject Questions => Body["questions"]!.AsObject();
+
+        public System.Text.Json.Nodes.JsonNode Question => Questions["scoreline"]!;
+
+        public System.Text.Json.Nodes.JsonNode QuestionNamed(string key) => Questions[key]!;
 
         public System.Text.Json.Nodes.JsonObject Criteria => Question["criteria"]!.AsObject();
 
