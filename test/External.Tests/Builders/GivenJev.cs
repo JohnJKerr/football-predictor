@@ -3,7 +3,6 @@ namespace External.Tests.Builders;
 using System.Net;
 using Domain.History;
 using Domain.Model;
-using Domain.Model;
 using Domain.Predicting;
 using External.Jev;
 
