@@ -15,14 +15,17 @@ OUT="${OUT:-$ROOT/experiments/$(date +%Y%m%d-%H%M%S)}"
 PORT="${PORT:-5299}"
 GAMEWEEKS="${GAMEWEEKS:-2 3 4}"
 
-# name:form:rates:records:h2h
+# name:form:rates:records:h2h:summary
 CONFIGS=(
-  "none:false:false:false:false"
-  "form-only:true:false:false:false"
-  "base-rates-only:false:true:false:false"
-  "club-records-only:false:false:true:false"
-  "head-to-head-only:false:false:false:true"
-  "all:true:true:true:true"
+  "none:false:false:false:false:false"
+  "form-only:true:false:false:false:false"
+  "base-rates-only:false:true:false:false:false"
+  "club-records-only:false:false:true:false:false"
+  "head-to-head-only:false:false:false:true:false"
+  "all:true:true:true:true:true"
+  # The form window as rates, against the same window as a list of matches.
+  "form-plus-summary:true:false:false:false:true"
+  "summary-only:false:false:false:false:true"
 )
 
 wanted=("$@")
@@ -44,17 +47,18 @@ echo "Building..."
 dotnet build "$ROOT/src/Api" --nologo -v q || exit 1
 
 for config in "${CONFIGS[@]}"; do
-  IFS=: read -r name form rates records h2h <<< "$config"
+  IFS=: read -r name form rates records h2h summary <<< "$config"
   selected "$name" || continue
 
   echo
-  echo "=== $name (form=$form rates=$rates records=$records h2h=$h2h) ==="
+  echo "=== $name (form=$form rates=$rates records=$records h2h=$h2h summary=$summary) ==="
 
   ASPNETCORE_ENVIRONMENT=Development \
   State__IncludeRecentForm="$form" \
   State__IncludeBaseRates="$rates" \
   State__IncludeClubRecords="$records" \
   State__IncludeHeadToHead="$h2h" \
+  State__IncludeFormSummary="$summary" \
     dotnet "$ROOT/src/Api/bin/Debug/net10.0/Api.dll" --urls "http://127.0.0.1:$PORT" \
     > "$OUT/$name.log" 2>&1 &
   API_PID=$!
