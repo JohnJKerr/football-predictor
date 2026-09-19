@@ -49,6 +49,13 @@ internal sealed class GivenJev
 
     public static GivenJev WithLeague(LeagueContext context) => new() { league = context };
 
+    /// <summary>Runs with only some blocks enabled, so a block's absence can be asserted.</summary>
+    public GivenJev AndState(IStateSettings settings)
+    {
+        state = settings;
+        return this;
+    }
+
     public JevUnderTest Build()
     {
         HttpMessageHandler handler = failure is { } status
@@ -131,6 +138,8 @@ internal sealed class GivenJev
         public System.Text.Json.Nodes.JsonArray History => Body["state"]!["history"]!.AsArray();
 
         public System.Text.Json.Nodes.JsonNode League => Body["state"]!["league"]!;
+
+        public System.Text.Json.Nodes.JsonNode Form => Body["state"]!["form"]!;
 
         public System.Text.Json.Nodes.JsonNode Calibration => Body["state"]!["calibration"]!;
 

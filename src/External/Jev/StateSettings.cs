@@ -21,6 +21,12 @@ public interface IStateSettings
 
     /// <summary>Show Jev what it predicted for recent gameweeks and what actually happened.</summary>
     bool IncludeCalibration { get; }
+
+    /// <summary>
+    /// State each club's form window as rates - goals and xG, for and against, per match -
+    /// rather than leaving Jev to aggregate the per-match history itself.
+    /// </summary>
+    bool IncludeFormSummary { get; }
 }
 
 /// <summary>
@@ -47,6 +53,9 @@ public sealed class StateSettings : IStateSettings
     /// <summary>Off until measured, like every other block here.</summary>
     public bool IncludeCalibration { get; set; }
 
+    /// <summary>Off until measured, like every other block here.</summary>
+    public bool IncludeFormSummary { get; set; }
+
     /// <summary>What the predictor assumes when no settings are supplied.</summary>
     public static IStateSettings Default { get; } = new StateSettings();
 
@@ -58,6 +67,7 @@ public sealed class StateSettings : IStateSettings
         IncludeHeadToHead = true,
         IncludeRecentForm = true,
         IncludeCalibration = true,
+        IncludeFormSummary = true,
     };
 
     /// <summary>Names of the parts in play, so a captured response says how it was produced.</summary>
@@ -70,6 +80,7 @@ public sealed class StateSettings : IStateSettings
         if (settings.IncludeClubRecords) parts.Add("club_records");
         if (settings.IncludeHeadToHead) parts.Add("head_to_head");
         if (settings.IncludeCalibration) parts.Add("calibration");
+        if (settings.IncludeFormSummary) parts.Add("form_summary");
 
         return parts;
     }

@@ -55,6 +55,7 @@ public sealed class JevPredictor(
             var sources = new List<string> { "the fixture in `fixture`" };
 
             if (state.IncludeRecentForm) sources.Insert(0, "the recent results in `history`");
+            if (state.IncludeFormSummary) sources.Insert(0, "each club's recent rates in `form`");
             if (state.IncludeBaseRates || state.IncludeClubRecords || state.IncludeHeadToHead)
             {
                 sources.Add("the long-run record in `league`");
@@ -73,6 +74,14 @@ public sealed class JevPredictor(
                     "`calibration` shows what you predicted for recent gameweeks and what " +
                     "actually happened. Weigh it: if your probabilities ran higher than your " +
                     "accuracy justified, be less certain this time. ";
+            }
+
+            if (state.IncludeFormSummary)
+            {
+                preamble +=
+                    "`form` averages each club's own recent matches: goals and expected goals, " +
+                    "scored and conceded, per match. The expected-goals rates are the steadier " +
+                    "of the two over a window this short. ";
             }
 
             if (state.IncludeBaseRates)
@@ -165,6 +174,9 @@ public sealed class JevPredictor(
                 ["gameweek"] = fixture.Gameweek,
             },
             ["history"] = new JsonArray([.. (state.IncludeRecentForm ? relevant : []).Select(ToJson)]),
+            // Built from the matches actually going out, so the rates and the per-match
+            // detail can never disagree about how long the window was.
+            ["form"] = ToJson(fixture, relevant),
             // Summarised rather than sent: three completed seasons are 120 KB of results.
             ["league"] = ToJson(context),
             ["calibration"] = ToJson(record),
@@ -195,6 +207,44 @@ public sealed class JevPredictor(
                 whenFalse: "At least one club fails to score."),
         },
     };
+
+    /// <summary>
+    /// Each club's form window reduced to rates. Named for the venue this time rather than
+    /// the club, matching how the fixture itself is stated.
+    /// </summary>
+    private JsonNode ToJson(Fixture fixture, IReadOnlyList<CompletedMatch> relevant)
+    {
+        var node = new JsonObject();
+        if (!state.IncludeFormSummary) return node;
+
+        // A club yet to play has no window, and an average over nothing would read as nothing.
+        if (FormSummary.For(relevant, fixture.HomeTeam) is { } home) node["home"] = ToJson(home);
+        if (FormSummary.For(relevant, fixture.AwayTeam) is { } away) node["away"] = ToJson(away);
+
+        return node;
+    }
+
+    private static JsonNode ToJson(FormSummary form)
+    {
+        var node = new JsonObject
+        {
+            ["club"] = form.Club,
+            ["matches"] = form.Matches,
+            ["goals_for_per_match"] = form.GoalsForPerMatch,
+            ["goals_against_per_match"] = form.GoalsAgainstPerMatch,
+        };
+
+        // Said in the state as well as implied by its absence: an xG rate drawn from three
+        // matches is not the same claim as one drawn from six.
+        if (form.ExpectedGoalsForPerMatch is { } forXg && form.ExpectedGoalsAgainstPerMatch is { } againstXg)
+        {
+            node["xg_for_per_match"] = forXg;
+            node["xg_against_per_match"] = againstXg;
+            node["matches_with_xg"] = form.MatchesWithXg;
+        }
+
+        return node;
+    }
 
     private static JsonObject Noul(string instructions, string whenTrue, string whenFalse) => new()
     {
