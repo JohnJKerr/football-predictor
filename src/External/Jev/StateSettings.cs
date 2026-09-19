@@ -18,6 +18,9 @@ public interface IStateSettings
     bool IncludeHeadToHead { get; }
 
     bool IncludeRecentForm { get; }
+
+    /// <summary>Show Jev what it predicted for recent gameweeks and what actually happened.</summary>
+    bool IncludeCalibration { get; }
 }
 
 /// <summary>
@@ -41,6 +44,9 @@ public sealed class StateSettings : IStateSettings
 
     public bool IncludeRecentForm { get; set; } = true;
 
+    /// <summary>Off until measured, like every other block here.</summary>
+    public bool IncludeCalibration { get; set; }
+
     /// <summary>What the predictor assumes when no settings are supplied.</summary>
     public static IStateSettings Default { get; } = new StateSettings();
 
@@ -51,6 +57,7 @@ public sealed class StateSettings : IStateSettings
         IncludeClubRecords = true,
         IncludeHeadToHead = true,
         IncludeRecentForm = true,
+        IncludeCalibration = true,
     };
 
     /// <summary>Names of the parts in play, so a captured response says how it was produced.</summary>
@@ -62,6 +69,7 @@ public sealed class StateSettings : IStateSettings
         if (settings.IncludeBaseRates) parts.Add("base_rates");
         if (settings.IncludeClubRecords) parts.Add("club_records");
         if (settings.IncludeHeadToHead) parts.Add("head_to_head");
+        if (settings.IncludeCalibration) parts.Add("calibration");
 
         return parts;
     }

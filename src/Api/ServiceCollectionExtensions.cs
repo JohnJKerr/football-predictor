@@ -1,8 +1,10 @@
 namespace Api;
 
+using Domain.Calibration;
 using Domain.History;
 using Domain.Predicting;
 using Domain.Schedule;
+using External.Calibration;
 using External.Data;
 using External.Jev;
 using Microsoft.Extensions.Options;
@@ -26,6 +28,8 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IMatchHistory>(_ => new JsonFileMatchHistory(data.ResultsPath));
         services.AddSingleton<IRelevantHistory, RelevantHistory>();
         services.AddSingleton<IPriorSeasons>(_ => new JsonFilePriorSeasons(data.PriorSeasonsPath));
+        services.AddSingleton<IPredictionLog>(_ => new JsonFilePredictionLog(data.PredictionsPath));
+        services.AddSingleton<ICalibrationFeedback, CalibrationFeedback>();
         services.AddSingleton<ILeagueContext, LeagueContextSource>();
 
         services.AddHttpClient<IJevPredictor, JevPredictor>(client =>
@@ -51,4 +55,8 @@ public sealed class DataFileOptions
 
     public string PriorSeasonsPath { get; set; } =
         Path.Combine(AppContext.BaseDirectory, "data", "prior-seasons.json");
+
+    /// <summary>Where predictions are kept so they can be shown back to Jev.</summary>
+    public string PredictionsPath { get; set; } =
+        Path.Combine(AppContext.BaseDirectory, "predictions");
 }

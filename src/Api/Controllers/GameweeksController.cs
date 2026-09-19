@@ -1,13 +1,17 @@
 namespace Api.Controllers;
 
 using Api.Models;
+using Domain.Calibration;
 using Domain.Predicting;
 using External.Jev;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
 [Route("gameweeks")]
-public sealed class GameweeksController(IGameweekPredictor predictor, IStateSettings? state = null)
+public sealed class GameweeksController(
+    IGameweekPredictor predictor,
+    IPredictionLog? log = null,
+    IStateSettings? state = null)
     : ControllerBase
 {
     /// <summary>Returns the most likely score for every fixture in the given gameweek.</summary>
@@ -31,6 +35,9 @@ public sealed class GameweeksController(IGameweekPredictor predictor, IStateSett
                 Status = StatusCodes.Status404NotFound,
             });
         }
+
+        // Kept so this gameweek can be shown back to Jev once the results are in.
+        if (log is not null) await log.RecordAsync(gameweek, predictions, cancellationToken);
 
         return Ok(predictions.ToResponse(
             gameweek,

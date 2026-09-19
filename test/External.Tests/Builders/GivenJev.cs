@@ -1,6 +1,7 @@
 namespace External.Tests.Builders;
 
 using System.Net;
+using Domain.Calibration;
 using Domain.History;
 using Domain.Model;
 using Domain.Predicting;
@@ -14,6 +15,7 @@ internal sealed class GivenJev
     private HttpStatusCode? failure;
     private LeagueContext league = new(LeagueBaseRates.None, null, null, null);
     private IStateSettings state = StateSettings.Everything;
+    private PredictionOutcome[] record = [];
     private IJevSettings settings = new TestJevSettings();
 
     public static GivenJev Asked() => new();
@@ -30,6 +32,14 @@ internal sealed class GivenJev
         history = matches;
         return this;
     }
+
+    public GivenJev AndRecord(params PredictionOutcome[] outcomes)
+    {
+        record = outcomes;
+        return this;
+    }
+
+    public static GivenJev WithRecord(params PredictionOutcome[] outcomes) => new() { record = outcomes };
 
     public GivenJev AndLeague(LeagueContext context)
     {
@@ -48,7 +58,8 @@ internal sealed class GivenJev
         return new JevUnderTest(
             new JevPredictor(
                 new HttpClient(handler), settings,
-                new StubRelevantHistory(history), new StubLeagueContext(league), state),
+                new StubRelevantHistory(history), new StubLeagueContext(league),
+                new StubCalibration(record), state),
             handler as RecordingHandler,
             history);
     }
@@ -79,6 +90,13 @@ internal sealed class GivenJev
             Asked = fixture;
             return Task.FromResult<IReadOnlyList<CompletedMatch>>(matches);
         }
+    }
+
+    private sealed class StubCalibration(PredictionOutcome[] record) : ICalibrationFeedback
+    {
+        public Task<IReadOnlyList<PredictionOutcome>> BeforeAsync(
+            int gameweek, CancellationToken cancellationToken = default)
+            => Task.FromResult<IReadOnlyList<PredictionOutcome>>(record);
     }
 
     private sealed class StubLeagueContext(LeagueContext context) : ILeagueContext
@@ -113,6 +131,8 @@ internal sealed class GivenJev
         public System.Text.Json.Nodes.JsonArray History => Body["state"]!["history"]!.AsArray();
 
         public System.Text.Json.Nodes.JsonNode League => Body["state"]!["league"]!;
+
+        public System.Text.Json.Nodes.JsonNode Calibration => Body["state"]!["calibration"]!;
 
         public long RequestBytes => Request.Content!.Headers.ContentLength!.Value;
     }

@@ -3,6 +3,7 @@ namespace External.Jev;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using Domain.Calibration;
 using Domain.History;
 using Domain.Model;
 using Domain.Predicting;
@@ -17,6 +18,7 @@ public sealed class JevPredictor(
     IJevSettings settings,
     IRelevantHistory history,
     ILeagueContext league,
+    ICalibrationFeedback? calibration = null,
     IStateSettings? state = null)
     : IJevPredictor
 {
@@ -58,7 +60,20 @@ public sealed class JevPredictor(
                 sources.Add("the long-run record in `league`");
             }
 
+            if (state.IncludeCalibration)
+            {
+                sources.Add("your own recent predictions and their results in `calibration`");
+            }
+
             var preamble = $"This is an upcoming Premier League fixture. Use {string.Join(", ", sources)}. ";
+
+            if (state.IncludeCalibration)
+            {
+                preamble +=
+                    "`calibration` shows what you predicted for recent gameweeks and what " +
+                    "actually happened. Weigh it: if your probabilities ran higher than your " +
+                    "accuracy justified, be less certain this time. ";
+            }
 
             if (state.IncludeBaseRates)
             {
@@ -77,7 +92,12 @@ public sealed class JevPredictor(
     {
         var relevant = await history.ForAsync(fixture, cancellationToken);
         var context = await league.ForAsync(fixture, cancellationToken);
-        var payload = BuildPayloadWithinBudget(fixture, relevant, context);
+
+        var record = this.state.IncludeCalibration && calibration is not null
+            ? await calibration.BeforeAsync(fixture.Gameweek, cancellationToken)
+            : [];
+
+        var payload = BuildPayloadWithinBudget(fixture, relevant, context, record);
 
         using var content = new ByteArrayContent(payload);
         content.Headers.ContentType = new MediaTypeHeaderValue("application/json") { CharSet = "utf-8" };
@@ -105,14 +125,17 @@ public sealed class JevPredictor(
     /// transport's own backstop, so a long season cannot silently produce a rejected request.
     /// </summary>
     private byte[] BuildPayloadWithinBudget(
-        Fixture fixture, IReadOnlyList<CompletedMatch> relevant, LeagueContext context)
+        Fixture fixture,
+        IReadOnlyList<CompletedMatch> relevant,
+        LeagueContext context,
+        IReadOnlyList<PredictionOutcome> record)
     {
         // Most recent first, so trimming from the end sheds the least useful history.
         var considered = relevant.OrderByDescending(m => m.KickoffUtc).ToList();
 
         while (true)
         {
-            var payload = JsonSerializer.SerializeToUtf8Bytes(BuildBody(fixture, considered, context));
+            var payload = JsonSerializer.SerializeToUtf8Bytes(BuildBody(fixture, considered, context, record));
 
             if (payload.Length <= MaxRequestBytes || considered.Count == 0) return payload;
 
@@ -126,7 +149,10 @@ public sealed class JevPredictor(
     }
 
     private JsonObject BuildBody(
-        Fixture fixture, IReadOnlyList<CompletedMatch> relevant, LeagueContext context) => new()
+        Fixture fixture,
+        IReadOnlyList<CompletedMatch> relevant,
+        LeagueContext context,
+        IReadOnlyList<PredictionOutcome> record) => new()
     {
         ["model"] = settings.Model,
         ["state"] = new JsonObject
@@ -141,6 +167,7 @@ public sealed class JevPredictor(
             ["history"] = new JsonArray([.. (state.IncludeRecentForm ? relevant : []).Select(ToJson)]),
             // Summarised rather than sent: three completed seasons are 120 KB of results.
             ["league"] = ToJson(context),
+            ["calibration"] = ToJson(record),
         },
         // Questions run in parallel inside one request, so the narrower ones cost no
         // extra round trip and share the state we already paid to send.
@@ -182,6 +209,52 @@ public sealed class JevPredictor(
         ["home_win"] = $"{fixture.HomeTeam} win at home against {fixture.AwayTeam}.",
         ["draw"] = $"{fixture.HomeTeam} and {fixture.AwayTeam} finish level.",
         ["away_win"] = $"{fixture.AwayTeam} win away at {fixture.HomeTeam}.",
+    };
+
+    /// <summary>
+    /// Jev's own record: what it said about recent gameweeks and what happened. Stated as
+    /// plainly as possible, with the tally spelled out, so the pattern is visible without
+    /// Jev having to count.
+    /// </summary>
+    private static JsonNode ToJson(IReadOnlyList<PredictionOutcome> record)
+    {
+        if (record.Count == 0) return new JsonObject();
+
+        var called = record.Count(r => r.CalledItRight);
+
+        return new JsonObject
+        {
+            ["note"] =
+                "These are your own predictions for recent gameweeks and what actually " +
+                "happened. Use them to judge how confident to be this time: if your " +
+                "probabilities were higher than your accuracy warranted, say less this time.",
+            ["called_correctly"] = called,
+            ["of"] = record.Count,
+            ["record"] = new JsonArray([.. record.Select(ToJson)]),
+        };
+    }
+
+    private static JsonNode ToJson(PredictionOutcome outcome) => new JsonObject
+    {
+        ["gameweek"] = outcome.Gameweek,
+        ["fixture"] = $"{outcome.HomeTeam} v {outcome.AwayTeam}",
+        ["you_said"] = new JsonObject
+        {
+            ["home_win"] = outcome.Said.ProbabilityOf(Outcome.HomeWin),
+            ["draw"] = outcome.Said.ProbabilityOf(Outcome.Draw),
+            ["away_win"] = outcome.Said.ProbabilityOf(Outcome.AwayWin),
+        },
+        ["you_predicted"] = outcome.SaidScoreline is { } s ? $"{s.HomeScore}-{s.AwayScore}" : null,
+        ["actual_score"] = $"{outcome.ActualHomeScore}-{outcome.ActualAwayScore}",
+        ["actual_result"] = OutcomeName(outcome.ActualOutcome),
+        ["you_were_right"] = outcome.CalledItRight,
+    };
+
+    private static string OutcomeName(Outcome outcome) => outcome switch
+    {
+        Outcome.HomeWin => "home_win",
+        Outcome.AwayWin => "away_win",
+        _ => "draw",
     };
 
     private JsonNode ToJson(LeagueContext context)

@@ -4,3 +4,4 @@ obj/
 experiments/*
 !experiments/*.csv
 !experiments/gw*-predictions.json
+predictions/
